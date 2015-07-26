@@ -91,36 +91,6 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
         return new CachedFeatureGenerator(defaultFeatures);
     }
 
-//    private static AdaptiveFeatureGenerator createDefaultFeatureGenerator() {
-//        //SentenceFeatureGenerator sentenceFeatureGenerator = new SentenceFeatureGenerator(true, false);
-//        //BigramNameFeatureGenerator bigramNameFeatureGenerator = new BigramNameFeatureGenerator();
-//        PreviousMapFeatureGenerator previousMapFeatureGenerator = new PreviousMapFeatureGenerator();
-//        OutcomePriorFeatureGenerator outcomePriorFeatureGenerator = new OutcomePriorFeatureGenerator();
-//        TokenClassFeatureGenerator tokenClassFeatureGenerator = new TokenClassFeatureGenerator(true);
-//        TokenFeatureGenerator tokenFeatureGenerator = new TokenFeatureGenerator(false);
-//        ContactPersonFeatureGenerator contactPersonFeatureGenerator = new ContactPersonFeatureGenerator();
-//        AdaptiveFeatureGenerator[] defaultFeatures =
-//                new AdaptiveFeatureGenerator[]{new WindowFeatureGenerator(tokenFeatureGenerator, 2, 2),
-//                        new WindowFeatureGenerator(tokenClassFeatureGenerator, 2, 2), outcomePriorFeatureGenerator,
-//                        previousMapFeatureGenerator,contactPersonFeatureGenerator};
-////        AdaptiveFeatureGenerator[] defaultFeatures =
-////                new AdaptiveFeatureGenerator[]{new WindowFeatureGenerator(tokenFeatureGenerator, 2, 2),
-////                        new WindowFeatureGenerator(tokenClassFeatureGenerator, 2, 2), outcomePriorFeatureGenerator,
-////                        previousMapFeatureGenerator, sentenceFeatureGenerator,contactPersonFeatureGenerator};
-////        DefaultNameContextGenerator defaultNameContextGenerator;
-////        NameContextGenerator nameContextGenerator;
-////        AdaptiveFeatureGenerator[] defaultFeatures =
-////                new AdaptiveFeatureGenerator[]{new WindowFeatureGenerator(tokenFeatureGenerator, 2, 2),
-////                        new WindowFeatureGenerator(tokenClassFeatureGenerator, 2, 2), outcomePriorFeatureGenerator,
-////                        previousMapFeatureGenerator, bigramNameFeatureGenerator, sentenceFeatureGenerator,contactPersonFeatureGenerator};
-////        AdaptiveFeatureGenerator[] defaultFeatures =
-////                new AdaptiveFeatureGenerator[]{new WindowFeatureGenerator(tokenFeatureGenerator, 2, 2),
-////                        new WindowFeatureGenerator(tokenClassFeatureGenerator, 2, 2),
-////                        previousMapFeatureGenerator, bigramNameFeatureGenerator, sentenceFeatureGenerator,contactPersonFeatureGenerator};
-//
-//        return new CachedFeatureGenerator(defaultFeatures);
-//    }
-
     private static String extractNameType(String outcome) {
         Matcher matcher = typedOutcomePattern.matcher(outcome);
         if (matcher.matches()) {

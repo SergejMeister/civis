@@ -19,13 +19,7 @@ public class CsvWriter {
     public static void write(String fileName, List<CSVData> data) {
         Writer out = null;
         try {
-            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "ISO-8859-1"));
-
-            //Write the CSV file header
-            //fileWriter.append(FILE_HEADER.toString());
-
-            //Add a new line separator after the header
-            //out.append(NEW_LINE_SEPARATOR);
+            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8"));
 
             //Write a new data object list to the CSV file
             for (CSVData csvData : data) {

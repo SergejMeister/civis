@@ -14,7 +14,7 @@ public class CsvNameWriter {
     public static final String CSV_NAME_SEPARATOR = ";";
 
     public static void write(String fileName, List<CSVNameData> namesDataToWrite) {
-        List<CSVData> dataToWrite = new ArrayList<CSVData>();
+        List<CSVData> dataToWrite = new ArrayList<>();
         for(CSVNameData nameData : namesDataToWrite){
             CSVData csvData = createNewCsvData(nameData);
             dataToWrite.add(csvData);
@@ -24,7 +24,7 @@ public class CsvNameWriter {
 
     private static CSVData createNewCsvData(CSVNameData csvNameData){
         String line = csvNameData.getName() + CSV_NAME_SEPARATOR + csvNameData.getGender();
-        List<String> items = new ArrayList<String>();
+        List<String> items = new ArrayList<>();
         items.add(csvNameData.getName());
         items.add(csvNameData.getGender());
         CSVData csvData = new CSVData(line,items);

@@ -57,26 +57,4 @@ public class ContactPersonFinderRunner {
 
         return jobContent;
     }
-
-//    private static void saveTestSentences(String sentences) {
-//        Writer out = null;
-//        String dePersonTrain =
-//                "/media/sergej/windows/data/Projekte/civis/utils/src/main/resources/civis/com/utils/runners/models/testMuster.txt";
-//        try {
-//            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(dePersonTrain), "ISO-8859-1"));
-//            out.append(sentences);
-//        } catch (Exception e) {
-//            System.out.println("Error in write file to - " + dePersonTrain);
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                out.flush();
-//                out.close();
-//            } catch (IOException e) {
-//                System.out.println("Error while flushing/closing fileWriter !!!");
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
 }

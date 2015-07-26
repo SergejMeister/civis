@@ -75,19 +75,4 @@ public class CSVNamesReader {
             return "Unknown";
         }
     }
-
-    public static String getSeparator(){
-        return CSV_NAME_SEPARATOR;
-    }
-
-    private static CSVData findTheSameNameInOtherList(List<CSVData> list2, String name1){
-        for(CSVData CSVData2 : list2){
-            String name2 = CSVData2.getItems().get(NAME_INDEX);
-            String gender2 = CSVData2.getItems().get(GENDER_INDEX);
-            if(name1.equals(name2)){
-                return CSVData2;
-            }
-        }
-        return null;
-    }
 }

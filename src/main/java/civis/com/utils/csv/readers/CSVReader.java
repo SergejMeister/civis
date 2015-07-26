@@ -28,14 +28,12 @@ public class CSVReader {
      * @return list of CSVData.
      */
     public static List<CSVData> read(String filePath, String separator) {
-        List<CSVData> result = new ArrayList<CSVData>();
+        List<CSVData> result = new ArrayList<>();
 
         BufferedReader br = null;
         String line = "";
-
-        try {
-            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath);
-            br = new BufferedReader(new InputStreamReader(inputStream, "ISO-8859-1"));
+        try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath)){
+            br = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
             while ((line = br.readLine()) != null) {
                 String[] lineItems = line.split(separator);
                 CSVData csvData = new CSVData(line, lineItems);
