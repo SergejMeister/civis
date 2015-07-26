@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.List;
@@ -21,7 +19,8 @@ public class CsvWriter {
     private final static String NEW_LINE_SEPARATOR = "\n";
 
     public static void write(String fileName, List<CSVData> data) {
-        try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName), DEFAULT_ENCODING)) {
+        try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName),
+                DEFAULT_ENCODING)) {
             Writer out = new BufferedWriter(outputStreamWriter);
 
             //Write a new data object list to the CSV file

@@ -17,10 +17,10 @@ import java.util.List;
  */
 public class ContactPersonFinderRunner {
 
+    private final static Logger LOG = LoggerFactory.getLogger(ContactPersonFinderRunner.class);
+
     public static final String JOB_BERRNER_MATTNER_PATH = "text/bernerMattnerJob.txt";
     public static final String JOB_ADO_PATH = "text/adoJob.txt";
-
-    private final static Logger LOG = LoggerFactory.getLogger(ContactPersonFinderRunner.class);
 
     public static void main(String[] args) {
         runWithFile(JOB_BERRNER_MATTNER_PATH);
@@ -53,7 +53,7 @@ public class ContactPersonFinderRunner {
             jobContent = IOUtils.toString(inputStream, "ISO-8859-1");
             inputStream.close();
         } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
+            LOG.error("Exception occurred while reading file ( " + fileName + " )", e);
         }
 
         return jobContent;
