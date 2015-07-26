@@ -14,13 +14,14 @@ Nutzungsbedingungen.
 Datenschutzrichtlinie.
 Ab jetzt kommen die Jobs zu Ihnen.
 Um zukünftig Jobs wie diesen per E-Mail zu erhalten, geben Sie bitte unten Ihre E-Mail-Adresse ein.
-�hnliche Jobs auf Basis Ihrer eben ausgeführten Suche.
+Ähnliche Jobs auf Basis Ihrer eben ausgeführten Suche.
 SOFTWAREINGENIEUR (M/W) EISENB.
 E-Mail-Adresse.
 Ich akzeptiere die und die von Monster.
 Nutzungsbedingungen.
 Datenschutzrichtlinie.
-? bezüglich dieses oder ähnlicher Jobs sowie weiterer Karriereangebote . ? , auch im Falle, dass Sie die Bewerbung nicht abgeschlossen haben. Sie erhalten vorab eine E-Mail von uns mit einem Best�tigungs-Link, um Ihre E-Mail-Adresse zu verifizieren.
+? bezüglich dieses oder ähnlicher Jobs sowie weiterer Karriereangebote . ? , auch im Falle, dass Sie die Bewerbung nicht abgeschlossen haben.
+Sie erhalten vorab eine E-Mail von uns mit einem Bestätigungs-Link, um Ihre E-Mail-Adresse zu verifizieren.
 Vielen Dank für Ihr Interesse am Job: SOFTWAREINGENIEUR (M/W) EISENBAHNSIGNALTECHNIK.
 Mit der Angabe Ihrer E-Mail-Adresse stimmen Sie zu, dass Monster Sie per E-Mail kontaktieren darf.
 Ihre E-Mail Adresse dem Unternehmen zur Verfügung stellen darf, bei dem Sie sich gerade bewerben.
@@ -33,7 +34,7 @@ Ungültige Email Adresse.
 Telefon.
 Zustimmen und Bewerbung starten.
 Bitte akzeptieren Sie die Nutzungsbedingungen.
-Ich habe die folgenden Texte gelesen und stimme diesen zu: und . Weiter ohne Angabe der E-Mail-Adresse geht es �ber das X rechts oben in diesem Fenster.
+Ich habe die folgenden Texte gelesen und stimme diesen zu: und . Weiter ohne Angabe der E-Mail-Adresse geht es über das X rechts oben in diesem Fenster.
 Nutzungsbedingungen.
 Ihre Datenschutzrechte.
 Alle Jobs des Unternehmens.
@@ -47,7 +48,8 @@ Berlin, München.
 Gehen Sie Ihren neuen Karriereschritt als.
 SOFTWAREINGENIEUR (M/W) EISENBAHNSIGNALTECHNIK.
 Chancen und Perspektive Was Sie erwartet.
-Moderne Leit- und Bediensysteme, elektronische Stellwerke sowie Signale und Weichen bilden das Rückgrat einer zuverlässigen Eisenbahninfrastruktur und eines sicheren und wirtschaftlichen Betriebs. Gemeinsam mit dem Projektteam entwickeln Sie sicherheitskritische Software-Lösungen zum Steuern, überwachen und Disponieren von Zugbewegungen.
+Moderne Leit- und Bediensysteme, elektronische Stellwerke sowie Signale und Weichen bilden das Rückgrat einer zuverlässigen Eisenbahninfrastruktur und eines sicheren und wirtschaftlichen Betriebs.
+Gemeinsam mit dem Projektteam entwickeln Sie sicherheitskritische Software-Lösungen zum Steuern, überwachen und Disponieren von Zugbewegungen.
 Sie spezifizieren Anforderungen und Architekturen für sicherheitskritische Software.
 Sie programmieren und testen sicherheitskritische Software.
 Sie setzen moderne Methoden und Werkzeuge ein, um die Struktur und das Verhalten von Software modellbasiert mit UML/ SysML zu beschreiben.
