@@ -259,12 +259,12 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
 
     @Override
     public List<ContactPersonSpan> find(String text) {
-        try (InputStream tokenizerModelInputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream(ModelPath.DE_TOKEN_BIN)) {
+        try (InputStream tokenizerModelInputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(
+                ModelPath.DE_TOKEN_BIN)) {
             TokenizerModel modelToken = new TokenizerModel(tokenizerModelInputStream);
             return find(text, modelToken);
         } catch (Exception e) {
-            LOG.error("Models can not be loaded successfully!", e);
+            LOG.error("Tokenizer Models can not be loaded successfully!", e);
         }
 
         return Collections.EMPTY_LIST;

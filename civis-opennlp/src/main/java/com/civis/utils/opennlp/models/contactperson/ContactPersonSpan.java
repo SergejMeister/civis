@@ -95,25 +95,49 @@ public class ContactPersonSpan {
 
         ContactPersonSpan that = (ContactPersonSpan) other;
 
-        if (!getFirstName().equals(that.getFirstName())) {
-            return false;
+        if (getFirstName() == null) {
+            if (that.getFirstName() != null) {
+                return false;
+            }
+        } else {
+            if (!getFirstName().equals(that.getFirstName())) {
+                return false;
+            }
         }
-        if (!getSecondName().equals(that.getSecondName())) {
-            return false;
+
+        if (getSecondName() == null) {
+            if (that.getSecondName() != null) {
+                return false;
+            }
+        } else {
+            if (!getSecondName().equals(that.getSecondName())) {
+                return false;
+            }
         }
-        if (!getSex().equals(that.getSex())) {
-            return false;
+
+        if (getSex() == null) {
+            if (that.getSex() != null) {
+                return false;
+            }
         }
-        return getProbability().equals(that.getProbability());
+
+        return getSex().equals(that.getSex());
 
     }
 
     @Override
     public int hashCode() {
-        int result = getFirstName().hashCode();
-        result = 31 * result + getSecondName().hashCode();
-        result = 31 * result + getSex().hashCode();
-        result = 31 * result + getProbability().hashCode();
+        int result = -1;
+        if (this.sex != null) {
+            result = result + getSex().hashCode();
+        }
+        if (this.firstName != null) {
+            result = 31 * getFirstName().hashCode();
+        }
+        if (this.secondName != null) {
+            result = 31 * result + getSecondName().hashCode();
+        }
+
         return result;
     }
 }
