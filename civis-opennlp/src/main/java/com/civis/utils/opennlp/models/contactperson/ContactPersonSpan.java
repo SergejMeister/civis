@@ -83,4 +83,37 @@ public class ContactPersonSpan {
     public void setProbability(Double probability) {
         this.probability = probability;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof ContactPersonSpan)) {
+            return false;
+        }
+
+        ContactPersonSpan that = (ContactPersonSpan) other;
+
+        if (!getFirstName().equals(that.getFirstName())) {
+            return false;
+        }
+        if (!getSecondName().equals(that.getSecondName())) {
+            return false;
+        }
+        if (!getSex().equals(that.getSex())) {
+            return false;
+        }
+        return getProbability().equals(that.getProbability());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getFirstName().hashCode();
+        result = 31 * result + getSecondName().hashCode();
+        result = 31 * result + getSex().hashCode();
+        result = 31 * result + getProbability().hashCode();
+        return result;
+    }
 }

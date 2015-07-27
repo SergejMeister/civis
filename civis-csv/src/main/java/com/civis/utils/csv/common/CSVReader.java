@@ -18,7 +18,7 @@ import java.util.List;
 public class CSVReader {
 
     private final static Logger LOG = LoggerFactory.getLogger(CSVReader.class);
-    private final static String DEFAULT_ENCODING = "ISO-8859-1";
+    private final static String DEFAULT_ENCODING = "UTF-8";
 
     /**
      * Read a specified file to find all items divided by given separator.
