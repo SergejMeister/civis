@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.civis</groupId>
         <artifactId>civis-utils</artifactId>
-        <version>1.1-SNAPSHOT</version>
+        <version>1.2-SNAPSHOT</version>
     </parent>
 
     <groupId>com.civis.civis-utils</groupId>
     <artifactId>civis-csv</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <!-- Output to jar format -->
     <packaging>jar</packaging>
