@@ -1806,6 +1806,6 @@ Dann sollten wir uns kennenlernen! Wir bieten... dir eine innovative Arbeitsatmo
 Noch interessierter? Bewirb dich jetzt!
 Sende uns bitte deine vollständigen Bewerbungsunterlagen mit der Angabe des frühestmöglichen Eintrittstermins über unser Jobportal unter folgendem Link:
 Berufserfahrung im Bereich Veranstaltungsmanagement ist vorteilhaft.
-Wenn Sie Fragen zum Aufgabenprofil dieser Stelle haben, wenden Sie sich bitte an Dr. <START:person> Katharina Eulenburg <END> git s(katharina.eulenburg@dzhk.de).
+Wenn Sie Fragen zum Aufgabenprofil dieser Stelle haben, wenden Sie sich bitte an Dr. <START:person> Katharina Eulenburg <END> (katharina.eulenburg@dzhk.de).
 Informationen über das DZHK und die Kontaktdaten der genannten Ansprechpartner finden Sie auf www.dzhk.de
 Bitte richten Sie Ihre Bewerbung ausschließlich elektronisch in einer PDF-Datei (nicht größer als 5 MB) bis zum 05.06.2015 an bewerbung@dzhk.de
