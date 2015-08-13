@@ -1788,3 +1788,24 @@ Der Vertrag ist vorerst auf zwei Jahre befristet. Ihre aussagekräftigen Bewerbu
 HAST DU NOCH FRAGEN? Dann wende Dich gern an unser HR Team // <START:person> Marc Fritze <END>  unter: fashionjobs@zalando.de Bitte beziehen Sie sich bei Ihrer Bewerbung auf StepStone
 Dann sollten wir uns kennen lernen! Wenn wir Ihr Interesse geweckt haben, dann senden Sie uns bitte Ihre vollst&auml;ndige Bewerbung (Anschreiben, Lebenslauf, Zeugnisse) unter Angabe Ihrer Gehaltsvorstellung sowie Ihres frühestmöglichen Eintrittstermins.
 idealo internet GmbH <START:person> Stephanie Gläser <END>  Berlin +49 (0)30 221 94 33
+In einem persönlichen Gespräch prüfen wir gemeinsam, in welchem Bereich Sie eingesetzt werden können und sprechen bei der Eignung die Empfehlung direkt an den CTO aus.
+Für einen ersten vertraulichen Kontakt steht Ihnen <START:salutation> Frau <END> <START:person> Yvonne Strauer <END> gerne zur Verfügung. Interessiert?
+Dann freuen wir uns auf Ihre aussagekräftigen Bewerbungsunterlagen (max. MB) unter Angabe Ihrer Gehaltsvorstellung und des frühestmöglichen Eintrittstermins per Online-Bewerbungsformular oder per E-Mail an: it.berlin@amadeus-fire.de
+Wir sind davon überzeugt, dass Vielseitigkeit dazu beiträgt unser Unternehmen leistungsfähiger und attraktiver zu machen. Daher sind wir an einem Gleichgewicht aller Mitarbeiter hinsichtlich Alter und Geschlecht sowie ethnischem und kulturellem Hintergrund interessiert.
+Ihr Ansprechpartner für diese Stellenausschreibung ist: <START:person> Sarah Osswald <END> Phone +4940 790227788 Bitte senden Sie uns Ihren Lebenslauf in englischer Sprache zu.
+Der Vertrag ist vorerst auf zwei Jahre befristet.
+Ihre aussagekräftigen Bewerbungsunterlagen erbitten wir bis zum 21. Juni 2015 ausschließlich per Email mit maximal drei Anhängen an <START:salutation> Herrn Dr. <END>  <START:person> Rolf Zettl <END> .
+Bewerbungen per Post werden nicht in das Bewerbungsverfahren aufgenommen oder zurückgesandt. Für Rückfragen zum Bewerbungsverfahren wenden Sie sich bitte an <START:salutation> Herrn <END>  <START:person> Schrams <END> .
+Wir freuen uns auf Sie! <START:person> Bettina Dücker <END> Recruiting
+Dann bewerben Sie sich jetzt bei Randstad Professionals. Für den Erstkontakt steht Ihnen <START:salutation> Herr Dipl.-Ing. <END> <START:person> Torsten Hebel <END> zur Verfügung.
+Wenn Sie einen Arbeitgeber mit langfristiger Zukunftsperspektive in einem wachsenden Unternehmen mit moderner Unternehmenskultur und angenehmem Arbeitsklima suchen, freuen wir uns auf Ihre aussagekräftigen Bewerbungsunterlagen.
+Bitte senden Sie diese unter Angabe Ihres Gehaltswunsches und Ihrer Verfügbarkeit an <START:salutation> Herrn <END> <START:person> Renä Malonn <END> , bevorzugt per E-Mail an Rene.Malonn@mateco.de. Aushilfe Studentenjob Minijob Mini-Job Aushilfsjob Nebenjob Aushilfskraft
+Darüber hinaus bieten wir Ihnen eine Festanstellung in einem erfolgreichen Unternehmen und eine attraktive Vergütung. In einer offenen, leistungsorientierten Unternehmenskultur mit flachen Hierarchien können Sie aktiv mitgestalten und zum Unternehmenserfolg messbar beitragen,
+sich persönlich weiterentwickeln und auch langfristig für sich attraktive Chancen erschließen. Kontakt <START:person> Franziska Knöpke <END> Referentin Human Resources
+Dann sollten wir uns kennenlernen! Wir bieten... dir eine innovative Arbeitsatmosphäre in unserem Team direkt an der Spree, viel Eigenverantwortung und täglich neue Herausforderungen übergreifende Zusammenarbeit in agilen Teams ohne Ellenbogenmentalität, mit Herz und Humor dir die Möglichkeit, neue Ideen einzubringen und Verantwortung zu übernehmen
+Noch interessierter? Bewirb dich jetzt!
+Sende uns bitte deine vollständigen Bewerbungsunterlagen mit der Angabe des frühestmöglichen Eintrittstermins über unser Jobportal unter folgendem Link:
+Berufserfahrung im Bereich Veranstaltungsmanagement ist vorteilhaft.
+Wenn Sie Fragen zum Aufgabenprofil dieser Stelle haben, wenden Sie sich bitte an Dr. <START:person> Katharina Eulenburg <END> git s(katharina.eulenburg@dzhk.de).
+Informationen über das DZHK und die Kontaktdaten der genannten Ansprechpartner finden Sie auf www.dzhk.de
+Bitte richten Sie Ihre Bewerbung ausschließlich elektronisch in einer PDF-Datei (nicht größer als 5 MB) bis zum 05.06.2015 an bewerbung@dzhk.de
