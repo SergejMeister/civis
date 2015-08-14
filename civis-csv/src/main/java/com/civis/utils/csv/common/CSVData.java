@@ -24,7 +24,7 @@ public class CSVData {
      */
     public CSVData() {
         this.line = "";
-        this.items = new ArrayList<String>();
+        this.items = new ArrayList<>();
     }
 
     /**

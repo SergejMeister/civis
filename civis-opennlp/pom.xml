@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.civis</groupId>
         <artifactId>civis-utils</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.2-SNAPSHOT</version>
     </parent>
 
     <groupId>com.civis.civis-utils</groupId>
     <artifactId>civis-opennlp</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <!-- Output to jar format -->
     <packaging>jar</packaging>

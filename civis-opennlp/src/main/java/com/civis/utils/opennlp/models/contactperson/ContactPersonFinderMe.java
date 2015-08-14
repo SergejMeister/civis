@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -44,11 +45,11 @@ import java.util.regex.Pattern;
 public class ContactPersonFinderMe implements ContactPersonFinder {
 
     private final static Logger LOG = LoggerFactory.getLogger(ContactPersonFinderMe.class);
-    private final List<String> manSalutations ;
-    private final List<String> womenSalutations ;
     private static final Pattern typedOutcomePattern = Pattern.compile("(.+)-\\w+");
     private static String[][] EMPTY = new String[0][0];
     private static int DEFAULT_BEAM_SIZE = 3;
+    private final List<String> manSalutations;
+    private final List<String> womenSalutations;
     protected MaxentModel model;
     protected NameContextGenerator contextGenerator;
     private AdditionalContextFeatureGenerator additionalContextFeatureGenerator;
@@ -56,8 +57,8 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
     private BeamSearch<String> beam;
 
     public ContactPersonFinderMe(TokenNameFinderModel model) {
-        this.manSalutations = Arrays.asList("Herr","Herrn","Mr.", "Mr");
-        this.womenSalutations = Arrays.asList("Frau","Ms.","Ms","Mrs.","Mrs");
+        this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
+        this.womenSalutations = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
         additionalContextFeatureGenerator = new AdditionalContextFeatureGenerator();
         this.model = model.getNameFinderModel();
         AdaptiveFeatureGenerator featureGenerator = createDefaultFeatureGenerator();
@@ -72,8 +73,8 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
     }
 
     public ContactPersonFinderMe(TokenNameFinderModel model, AdaptiveFeatureGenerator generator) {
-        this.manSalutations = Arrays.asList("Herr","Herrn","Mr.", "Mr");
-        this.womenSalutations = Arrays.asList("Frau","Ms.","Ms","Mrs.","Mrs");
+        this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
+        this.womenSalutations = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
         this.additionalContextFeatureGenerator = new AdditionalContextFeatureGenerator();
         this.model = model.getNameFinderModel();
         this.contextGenerator = new DefaultNameContextGenerator(generator);
@@ -204,15 +205,15 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
         for (int i = 0; i < personSpans.size(); i++) {
             Span personSpan = personSpans.get(i);
             String firstName = tokens[personSpan.getStart()];
-            String sexPrefix = findSex(firstName, salutationSpans,tokens);
+            String sexPrefix = findSex(firstName, salutationSpans, tokens);
             double probability = personSpanProbs[i];
 
             int nextTokenIndex = personSpan.getStart() + 1;
             if (nextTokenIndex < tokens.length) {
                 String lastName = tokens[nextTokenIndex];
-                if(ContactPersonFeatureGenerator.NAME_PATTERN.matcher(lastName).matches()){
+                if (ContactPersonFeatureGenerator.NAME_PATTERN.matcher(lastName).matches()) {
                     contactSpans.add(new ContactPersonSpan(firstName, lastName, sexPrefix, probability));
-                }else{
+                } else {
                     // Hm. next token doesn't have name format. Maybe, the firstName is secondName, like - Herr Meister :)
                     lastName = firstName;
                     contactSpans.add(new ContactPersonSpan(null, lastName, sexPrefix, probability));
@@ -220,14 +221,18 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
             }
         }
 
-        return contactSpans;
+        return removeDuplicated(contactSpans);
     }
 
-    private String findSex(String personName, List<Span> salutationSpans,String[] tokens) {
-        String sexText = "" ;
-        for(Span salutationSpan : salutationSpans) {
+    private List<ContactPersonSpan> removeDuplicated(List<ContactPersonSpan> contactSpans) {
+        return contactSpans.parallelStream().distinct().collect(Collectors.toList());
+    }
+
+    private String findSex(String personName, List<Span> salutationSpans, String[] tokens) {
+        String sexText = "";
+        for (Span salutationSpan : salutationSpans) {
             String nextWordAfterSalutation = tokens[salutationSpan.getEnd()];
-            if(nextWordAfterSalutation.equals(personName)) {
+            if (nextWordAfterSalutation.equals(personName)) {
                 //That mean after Salutation is coming person name (first or second name? :) ).
                 sexText = tokens[salutationSpan.getStart()];
             }
@@ -236,12 +241,12 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
         return getSexPrefix(sexText);
     }
 
-    private String getSexPrefix(String sexText){
-        if(this.manSalutations.contains(sexText)){
+    private String getSexPrefix(String sexText) {
+        if (this.manSalutations.contains(sexText)) {
             return "M";
-        }else if(this.womenSalutations.contains(sexText)){
+        } else if (this.womenSalutations.contains(sexText)) {
             return "W";
-        }else{
+        } else {
             return "N";
         }
     }
@@ -254,12 +259,12 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
 
     @Override
     public List<ContactPersonSpan> find(String text) {
-        try (InputStream tokenizerModelInputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream(ModelPath.DE_TOKEN_BIN)) {
+        try (InputStream tokenizerModelInputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(
+                ModelPath.DE_TOKEN_BIN)) {
             TokenizerModel modelToken = new TokenizerModel(tokenizerModelInputStream);
             return find(text, modelToken);
         } catch (Exception e) {
-            LOG.error("Models can not be loaded successfully!", e);
+            LOG.error("Tokenizer Models can not be loaded successfully!", e);
         }
 
         return Collections.EMPTY_LIST;

@@ -1,22 +1,19 @@
 package com.civis.utils.opennlp.runners;
 
 
-
 import com.civis.utils.opennlp.models.ModelBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 
 /**
- * Created by Sergej Meister on 6/12/15.
+ * Utility class to train a model.
  */
 public class ContactPersonModelTrainRunner {
 
-    private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String BLANK_SEPARATOR = " ";
+    private final static Logger LOG = LoggerFactory.getLogger(ContactPersonModelTrainRunner.class);
 
     public static void main(String[] args) {
         URL resourceTrainUrl = Thread.currentThread().getContextClassLoader().getResource("train");
@@ -26,34 +23,7 @@ public class ContactPersonModelTrainRunner {
         try {
             ModelBuilder.build(dePersonTrain, modelOutputPath);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("Exception occurred in model build process", e);
         }
-    }
-
-    private static StringBuilder getTrainTextPattern(String pathToTrainTextPattern) {
-        StringBuilder stringBuilder = new StringBuilder();
-        BufferedReader br = null;
-        try {
-            InputStream inputStream =
-                    Thread.currentThread().getContextClassLoader().getResourceAsStream(pathToTrainTextPattern);
-            br = new BufferedReader(new InputStreamReader(inputStream, "ISO-8859-1"));
-            String line;
-            while ((line = br.readLine()) != null) {
-                stringBuilder.append(line);
-                stringBuilder.append(NEW_LINE_SEPARATOR);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return stringBuilder;
     }
 }

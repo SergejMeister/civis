@@ -17,14 +17,16 @@ import java.util.List;
  */
 public class ContactPersonFinderRunner {
 
+    private final static Logger LOG = LoggerFactory.getLogger(ContactPersonFinderRunner.class);
+
     public static final String JOB_BERRNER_MATTNER_PATH = "text/bernerMattnerJob.txt";
     public static final String JOB_ADO_PATH = "text/adoJob.txt";
-
-    private final static Logger LOG = LoggerFactory.getLogger(ContactPersonFinderRunner.class);
+    public static final String JOB_MATECO_PATH = "text/mateco.txt";
 
     public static void main(String[] args) {
         runWithFile(JOB_BERRNER_MATTNER_PATH);
         runWithFile(JOB_ADO_PATH);
+        runWithFile(JOB_MATECO_PATH);
     }
 
     private static void runWithFile(String filePath) {
@@ -50,10 +52,10 @@ public class ContactPersonFinderRunner {
     private static String getTextExample(String fileName) {
         String jobContent = "";
         try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName)) {
-            jobContent = IOUtils.toString(inputStream, "ISO-8859-1");
+            jobContent = IOUtils.toString(inputStream, "UTF-8");
             inputStream.close();
         } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
+            LOG.error("Exception occurred while reading file ( " + fileName + " )", e);
         }
 
         return jobContent;
