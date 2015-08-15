@@ -1,0 +1,14 @@
+Wir suchen Studenten für die Web Entwicklung (m/w) für Berlin
+die mit uns eine Java Web-Anwendungen im Rahmen unserer ausgewachsenen Enterprise Software für Verkehrsunternehmen entwickeln möchten,
+die ein Gespür dafür haben, wie man Web-Oberflächen im Desktop- und Mobilbereich nutzerfreundlich designt,
+die das Zusammenspiel und die Aufgaben von HTML, CSS und JavaScript verstehen,
+Frauen und Männer, die den Dingen gerne auf den Grund gehen.
+Als Student in der Web Entwicklung
+gestalten Sie im Team eine Web-Anwendungen zur Dienst- und Personalplanung, die in Betrieben des öffentlichen Verkehrs weltweit zum Einsatz kommt,
+erarbeiten Sie nutzerfreundliche Anwendungen für den Desktop- und Mobilbereich,
+arbeiten Sie mit einer evolutionären Produktentwicklung in einem weitläufigen Projektumfeld.
+Vor- und Nachname platziert ohne irgendwelches Satzmuster Sofia Arngold Der Name muss Trotzdem mit Hilfe eines FirstnameFeatureGeneraor gefunden werden.
+Wir suchen Kollegen,
+die bereits Erfahrung in der Web-Entwicklung gesammelt haben und sich für Webdesign und Usability interessieren,
+die sorgfältig und analytisch arbeiten und sich schnell in komplexen Anwendungen zurechtfinden können,
+die uns etwa 20 Stunden pro Woche unterstützen können und kommunikativ, neugierig sowie zuverlässig sind.

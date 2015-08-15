@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Created by Sergej Meister on 6/25/15.
+ * Contact persons features.
+ *
+ * The first name begins with Upper case.
+ * Second name should begin with Upper case too.
  */
 public class ContactPersonFeatureGenerator extends FeatureGeneratorAdapter {
 

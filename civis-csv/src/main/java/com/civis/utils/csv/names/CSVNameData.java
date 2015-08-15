@@ -1,7 +1,7 @@
 package com.civis.utils.csv.names;
 
 /**
- * Model CsvName.
+ * Model to represents csv-name data.
  */
 public class CSVNameData {
 
@@ -21,6 +21,19 @@ public class CSVNameData {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Returns name with first upper case letter.
+     */
+    public String getCapitalizeName() {
+        if (name != null && name.length() != 0) {
+            char[] chars = name.toCharArray();
+            chars[0] = Character.toUpperCase(chars[0]);
+            return new String(chars);
+        } else {
+            return name;
+        }
     }
 
     public String getGender() {

@@ -1,6 +1,9 @@
 package com.civis.utils.opennlp.models.contactperson;
 
+import com.civis.utils.csv.names.CSVNameData;
+import com.civis.utils.csv.names.CSVNamesReader;
 import com.civis.utils.opennlp.features.ContactPersonFeatureGenerator;
+import com.civis.utils.opennlp.features.FirstNameFeatureGenerator;
 import com.civis.utils.opennlp.models.ModelPath;
 import com.civis.utils.opennlp.validators.ContactPersonFinderSequenceValidator;
 import opennlp.model.AbstractModel;
@@ -33,8 +36,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -53,20 +58,25 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
     protected MaxentModel model;
     protected NameContextGenerator contextGenerator;
     private AdditionalContextFeatureGenerator additionalContextFeatureGenerator;
+    private FirstNameFeatureGenerator firstNameFeatureGenerator;
     private Sequence bestSequence;
     private BeamSearch<String> beam;
+    private Map<String, String> mapNamesGender;
 
     public ContactPersonFinderMe(TokenNameFinderModel model) {
         this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
         this.womenSalutations = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
+        initMapNamesGender();
+
+        Set<String> excludeNames = generateExcludeNames();
+        this.firstNameFeatureGenerator = new FirstNameFeatureGenerator(this.mapNamesGender.keySet(), excludeNames);
         additionalContextFeatureGenerator = new AdditionalContextFeatureGenerator();
         this.model = model.getNameFinderModel();
         AdaptiveFeatureGenerator featureGenerator = createDefaultFeatureGenerator();
         this.contextGenerator = new DefaultNameContextGenerator(featureGenerator);
-        //this.contextGenerator.addFeatureGenerator(new WindowFeatureGenerator(additionalContextFeatureGenerator, 8, 8));
+        this.contextGenerator.addFeatureGenerator(firstNameFeatureGenerator);
 
-        //TODO research sequence generator.
-        //SequenceValidator<String> sequenceValidator = new NameFinderSequenceValidator();
+        //TODO research sequence validator.
         SequenceValidator<String> sequenceValidator = new ContactPersonFinderSequenceValidator();
         this.beam = new BeamSearch<>(DEFAULT_BEAM_SIZE, this.contextGenerator, this.model, sequenceValidator,
                 DEFAULT_BEAM_SIZE);
@@ -75,18 +85,20 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
     public ContactPersonFinderMe(TokenNameFinderModel model, AdaptiveFeatureGenerator generator) {
         this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
         this.womenSalutations = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
+        initMapNamesGender();
+
+        Set<String> excludeNames = generateExcludeNames();
+        this.firstNameFeatureGenerator = new FirstNameFeatureGenerator(this.mapNamesGender.keySet(), excludeNames);
         this.additionalContextFeatureGenerator = new AdditionalContextFeatureGenerator();
         this.model = model.getNameFinderModel();
         this.contextGenerator = new DefaultNameContextGenerator(generator);
-        //this.contextGenerator.addFeatureGenerator(new WindowFeatureGenerator(this.additionalContextFeatureGenerator, 8, 8));
+        this.contextGenerator.addFeatureGenerator(firstNameFeatureGenerator);
 
-        //TODO research sequence generator.
-        //SequenceValidator<String> sequenceValidator = new NameFinderSequenceValidator();
+        //TODO research sequence validator.
         SequenceValidator<String> sequenceValidator = new ContactPersonFinderSequenceValidator();
         this.beam = new BeamSearch<>(DEFAULT_BEAM_SIZE, this.contextGenerator, this.model, sequenceValidator,
                 DEFAULT_BEAM_SIZE);
     }
-
 
     private static AdaptiveFeatureGenerator createDefaultFeatureGenerator() {
         ContactPersonFeatureGenerator contactPersonFeatureGenerator = new ContactPersonFeatureGenerator();
@@ -147,6 +159,28 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
             }
 
             return new TokenNameFinderModel(languageCode, nameFinderModel, resources, manifestInfoEntries);
+        }
+    }
+
+    private Set<String> generateExcludeNames() {
+        Set<String> excludeNames = new HashSet<>();
+        excludeNames.add("Berlin");
+        excludeNames.add("Web");
+        excludeNames.add("Der");
+        return excludeNames;
+    }
+
+    /**
+     * Generate map with more than 18.000 names.
+     * Map-Key is name, Map-Value is gender.
+     * <p/>
+     * CsvNameReader read data from file names.csv in civis-csv module.
+     */
+    private void initMapNamesGender() {
+        this.mapNamesGender = new HashMap<>();
+        List<CSVNameData> nameDataList = CSVNamesReader.read();
+        for (CSVNameData csvNameData : nameDataList) {
+            mapNamesGender.put(csvNameData.getName(), csvNameData.getGender());
         }
     }
 
@@ -221,7 +255,26 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
             }
         }
 
-        return removeDuplicated(contactSpans);
+        if (!contactSpans.isEmpty()) {
+            //contact persons found
+            return removeDuplicated(contactSpans);
+        } else {
+            //contact persons not found, than check in firstNameFeatureGenerator
+            return getContactPersonsFromFirstNameFeature(tokens);
+        }
+    }
+
+    private List<ContactPersonSpan> getContactPersonsFromFirstNameFeature(String[] tokens) {
+        List<ContactPersonSpan> contactSpans = new ArrayList<>();
+        for (Integer firstNameIndex : firstNameFeatureGenerator.getIndexes()) {
+            String firstName = tokens[firstNameIndex];
+            String secondName = tokens[firstNameIndex + 1];
+            String sexPrefix = mapNamesGender.get(firstName);
+            contactSpans.add(new ContactPersonSpan(firstName, secondName, sexPrefix));
+        }
+
+        firstNameFeatureGenerator.clear();
+        return contactSpans;
     }
 
     private List<ContactPersonSpan> removeDuplicated(List<ContactPersonSpan> contactSpans) {

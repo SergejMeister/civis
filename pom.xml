@@ -13,7 +13,6 @@
 
     <properties>
         <!-- use UTF-8 for everything -->
-        <project.verion>1.2-SNAPSHOT</project.verion>
         <project.build.sourceEncoding>UTF-8 </project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <log.path>target/log</log.path>
@@ -69,6 +68,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>

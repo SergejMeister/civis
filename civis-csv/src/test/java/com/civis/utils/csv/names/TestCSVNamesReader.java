@@ -11,9 +11,9 @@ import java.util.List;
 public class TestCSVNamesReader {
 
     @Test
-    public void testDefaultRead(){
+    public void testDefaultRead() {
         List<CSVNameData> nameDataList = CSVNamesReader.read();
-        Assert.assertEquals(18414,nameDataList.size());
+        Assert.assertEquals(18499,nameDataList.size());
     }
 
 }

@@ -33,7 +33,7 @@ public class CSVReader {
 
         BufferedReader br = null;
         String line = "";
-        try (InputStream inputStream = new FileInputStream(filePath)) {
+        try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath)) {
             br = new BufferedReader(new InputStreamReader(inputStream,DEFAULT_ENCODING));
             while ((line = br.readLine()) != null) {
                 String[] lineItems = line.split(separator);

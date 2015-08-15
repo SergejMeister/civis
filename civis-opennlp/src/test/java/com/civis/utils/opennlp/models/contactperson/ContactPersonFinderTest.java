@@ -62,6 +62,19 @@ public class ContactPersonFinderTest extends TestCase {
         Assert.assertTrue("Probability should be greater than 0.6 !", contactSpanSergej.getProbability() > 0.6);
     }
 
+    @Test
+    public void testIvuJob() {
+        String filePath = "text/ivu.txt";
+        String exampleText = getTextExample(filePath);
+        ContactPersonFinder contactPersonFinder = ModelFactory.getContactPersonFinder();
+        List<ContactPersonSpan> contactPersonSpans = contactPersonFinder.find(exampleText);
+        Assert.assertEquals("Should be exact one contact person!", 1, contactPersonSpans.size());
+        ContactPersonSpan contactSpan = contactPersonSpans.get(0);
+        Assert.assertEquals("Sofia", contactSpan.getFirstName());
+        Assert.assertEquals("Arngold", contactSpan.getSecondName());
+        Assert.assertEquals("W", contactSpan.getSex());
+    }
+
     private static String getTextExample(String fileName) {
         String jobContent = "";
         try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName)) {

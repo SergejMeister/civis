@@ -39,6 +39,12 @@ public class ContactPersonSpan {
         this.secondName = secondName;
     }
 
+    public ContactPersonSpan(String firstName, String secondName,String sex) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.sex = sex;
+    }
+
     public ContactPersonSpan(String firstName, String secondName, Double probability) {
         this.firstName = firstName;
         this.secondName = secondName;

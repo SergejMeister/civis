@@ -8,13 +8,12 @@
         <groupId>com.civis</groupId>
         <artifactId>civis-utils</artifactId>
         <version>1.2-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.civis.civis-utils</groupId>
     <artifactId>civis-opennlp</artifactId>
     <version>1.2-SNAPSHOT</version>
-
-    <!-- Output to jar format -->
     <packaging>jar</packaging>
 
     <dependencies>
@@ -23,17 +22,11 @@
             <artifactId>opennlp-tools</artifactId>
             <version>1.5.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.civis.civis-utils</groupId>
+            <artifactId>civis-csv</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
