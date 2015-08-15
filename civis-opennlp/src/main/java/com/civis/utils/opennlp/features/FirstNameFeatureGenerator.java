@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * This generator
+ * This generator check token value in set of names.
+ * <p/>
+ * If token value exists in the set of names than add feature.
  */
 public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
 
