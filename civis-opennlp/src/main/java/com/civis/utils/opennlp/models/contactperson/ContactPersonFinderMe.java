@@ -164,9 +164,10 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
 
     private Set<String> generateExcludeNames() {
         Set<String> excludeNames = new HashSet<>();
-        excludeNames.add("Berlin");
-        excludeNames.add("Web");
-        excludeNames.add("Der");
+        excludeNames.add("Land");
+        excludeNames.add("Europa");
+        excludeNames.add("Job");
+        excludeNames.add("Brand");
         return excludeNames;
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 public class CSVNamesReader {
 
 
-    public static final String DEFAULT_NAMES_CSV_RES = "names/names.csv";
+    public static final String DEFAULT_NAMES_CSV_RES = "names/de_names.csv";
     public static final String CSV_NAME_SEPARATOR = ";";
     public static final Integer NAME_INDEX = 0;
     public static final Integer GENDER_INDEX = 1;

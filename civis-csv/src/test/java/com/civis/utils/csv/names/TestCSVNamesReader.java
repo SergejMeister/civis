@@ -12,8 +12,14 @@ public class TestCSVNamesReader {
 
     @Test
     public void testDefaultRead() {
-        List<CSVNameData> nameDataList = CSVNamesReader.read();
+        List<CSVNameData> nameDataList = CSVNamesReader.read("names/names.csv");
         Assert.assertEquals(18499,nameDataList.size());
+    }
+
+    @Test
+    public void testGermanyNamesRead() {
+        List<CSVNameData> nameDataList = CSVNamesReader.read("names/de_names.csv");
+        Assert.assertEquals(18484,nameDataList.size());
     }
 
 }

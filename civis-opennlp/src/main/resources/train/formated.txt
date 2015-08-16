@@ -1797,7 +1797,7 @@ Der Vertrag ist vorerst auf zwei Jahre befristet.
 Ihre aussagekräftigen Bewerbungsunterlagen erbitten wir bis zum 21. Juni 2015 ausschließlich per Email mit maximal drei Anhängen an <START:salutation> Herrn Dr. <END>  <START:person> Rolf Zettl <END> .
 Bewerbungen per Post werden nicht in das Bewerbungsverfahren aufgenommen oder zurückgesandt. Für Rückfragen zum Bewerbungsverfahren wenden Sie sich bitte an <START:salutation> Herrn <END>  <START:person> Schrams <END> .
 Wir freuen uns auf Sie! <START:person> Bettina Dücker <END> Recruiting
-Dann bewerben Sie sich jetzt bei Randstad Professionals. Für den Erstkontakt steht Ihnen <START:salutation> Herr Dipl.-Ing. <END> <START:person> Torsten Hebel <END> zur Verfügung.
+Dann bewerben Sie sich jetzt bei Randstad Professionals. Für den Erstkontakt steht Ihnen <START:salutation> Herr <END> Dipl.-Ing. <START:person> Torsten Hebel <END> zur Verfügung.
 Wenn Sie einen Arbeitgeber mit langfristiger Zukunftsperspektive in einem wachsenden Unternehmen mit moderner Unternehmenskultur und angenehmem Arbeitsklima suchen, freuen wir uns auf Ihre aussagekräftigen Bewerbungsunterlagen.
 Bitte senden Sie diese unter Angabe Ihres Gehaltswunsches und Ihrer Verfügbarkeit an <START:salutation> Herrn <END> <START:person> Renä Malonn <END> , bevorzugt per E-Mail an Rene.Malonn@mateco.de. Aushilfe Studentenjob Minijob Mini-Job Aushilfsjob Nebenjob Aushilfskraft
 Darüber hinaus bieten wir Ihnen eine Festanstellung in einem erfolgreichen Unternehmen und eine attraktive Vergütung. In einer offenen, leistungsorientierten Unternehmenskultur mit flachen Hierarchien können Sie aktiv mitgestalten und zum Unternehmenserfolg messbar beitragen,
@@ -1809,3 +1809,13 @@ Berufserfahrung im Bereich Veranstaltungsmanagement ist vorteilhaft.
 Wenn Sie Fragen zum Aufgabenprofil dieser Stelle haben, wenden Sie sich bitte an Dr. <START:person> Katharina Eulenburg <END> (katharina.eulenburg@dzhk.de).
 Informationen über das DZHK und die Kontaktdaten der genannten Ansprechpartner finden Sie auf www.dzhk.de
 Bitte richten Sie Ihre Bewerbung ausschließlich elektronisch in einer PDF-Datei (nicht größer als 5 MB) bis zum 05.06.2015 an bewerbung@dzhk.de
+Dann bewirb dich über den folgenden Link: https://hire.jobvite.com/j?aj=oBL30fw9&s=Stepstone und füge deiner Bewerbung ein Anschreiben unter Angabe deines frühestmöglichen Einstiegstermins,
+deiner Gehaltsvorstellungen, einen aktuellen Lebenslauf und deine relevanten Zeugnisse hinzu. Deine Bewerbung kannst du an <START:person> Roksana Lichte <END> richten.
+Was Sie erwarten können… Innovatives Arbeitsumfeld im etablierten und bekannten Unternehmen Positives und aufgeschlossenes Betriebsklima
+Exzellente Möglichkeit der fachlichen Weiterentwicklung Trainings und Schulungen Jährliche Mitarbeitergespräche mit individueller Zielsetzung Attraktive Sozialleitungen Betriebliche
+Altersvorsorge 30 Urlaubstage Work-Life-Balance Jobticket Mitarbeiterrabatte Fühlen Sie sich angesprochen?
+Dann bewerben Sie sich bitte mit Ihrem vollständigen Lebenslauf (als Word-Dokument) inkl. Angabe des frühesten Eintrittstermins und Ihrer Gehaltsvorstellung zu Händen an <START:person> Malgorzata Denkiewicz <END> . Ihre Unterlagen und Angaben werden selbstverständlich vertraulich behandelt.
+Die aktuell zu besetzenden SAP Stellen im Großraum Berlin finden Sie unter folgendem Link, Stichwort DENKIEWICZ: http://www.computerfutures.de Bei Fragen können Sie mich gerne unter der 030 22 15 20 509 erreichen.
+Ich freue mich auf Ihre Bewerbung. Ihre SAP Recruitment Spezialistin Erfahren Sie mehr über Computer Futures unter www.computerfutures.com/de Referenz-Code: CF-12393724_1430918651 Kontakt: <START:person> Malgorzata Denkiewicz <END> E-Mail: Per E-Mail bewerben Unternehmen folgenAktuelle Informationen über das Unternehmen werden in Ihrem Monster Profil angezeigt.Sie haben sich dieses Unternehmen gemerktDiesen Job meldenSpeichernWeiterleitenAlle Computer Futures Jobs
+Bei Deloitte Digital (http://www.deloittedigital.com/de) erwartet Sie ein spannendes Umfeld mit internationalen Kontakten, täglich neuen Herausforderungen und hervorragenden Aufstiegschancen.
+Sie sind interessiert? Wir freuen uns auf Sie! Bitte richten Sie Ihre vollständigen Bewerbungsunterlagen (Anschreiben, Lebenslauf, Abiturzeugnis, Hochschulzeugnisse sowie Arbeits- und Praktikumszeugnisse) an <START:person> Ines Senges <END> . Fragen beantwortet Ihnen unser Recruiting Team gern unter +49 (0)211 8772 4111.

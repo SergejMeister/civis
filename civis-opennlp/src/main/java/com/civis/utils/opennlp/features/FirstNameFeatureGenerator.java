@@ -17,6 +17,7 @@ public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
 
     private Set<String> names;
     private Set<Integer> indexes;
+    private Set<String> foundedNames;
 
     public FirstNameFeatureGenerator() {
         this.names = new HashSet<>();
@@ -36,6 +37,7 @@ public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
 
     private void init() {
         this.indexes = new HashSet<>();
+        this.foundedNames = new HashSet<>();
     }
 
 
@@ -44,8 +46,11 @@ public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
         String token = tokens[index];
         if (names.contains(token)) {
             if (checkContactPersonFeatures(features)) {
-                indexes.add(index);
-                features.add(FIRSTNAME_PREFIX + "=" + token.toLowerCase());
+                if(!foundedNames.contains(token)){
+                    foundedNames.add(token);
+                    indexes.add(index);
+                    features.add(FIRSTNAME_PREFIX + "=" + token.toLowerCase());
+                }
             }
         }
     }
@@ -71,6 +76,7 @@ public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
     @Override
     public void clearAdaptiveData() {
         names.clear();
+        foundedNames.clear();
     }
 
     /**
@@ -81,7 +87,7 @@ public class FirstNameFeatureGenerator extends FeatureGeneratorAdapter {
     }
 
     public void clear() {
-        names.clear();
+        clearAdaptiveData();
         indexes.clear();
     }
 }
