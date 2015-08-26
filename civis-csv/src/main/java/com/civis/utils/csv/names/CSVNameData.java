@@ -11,8 +11,8 @@ public class CSVNameData {
 
 
     public CSVNameData(String name, String gender) {
-        this.name = name;
-        this.gender = gender;
+        setName(name);
+        setGender(gender);
     }
 
     public String getName() {
@@ -55,17 +55,15 @@ public class CSVNameData {
 
         CSVNameData that = (CSVNameData) o;
 
-        if (name != null ? !name.equals(that.name) : that.name != null) {
-            return false;
-        }
-        return !(gender != null ? !gender.equals(that.gender) : that.gender != null);
+        return !(getName() != null ? !getName().equals(that.getName()) : that.getName() != null) &&
+                !(getGender() != null ? !getGender().equals(that.getGender()) : that.getGender() != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (gender != null ? gender.hashCode() : 0);
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getGender() != null ? getGender().hashCode() : 0);
         return result;
     }
 }
