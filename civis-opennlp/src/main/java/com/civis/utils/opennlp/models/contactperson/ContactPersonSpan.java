@@ -17,10 +17,12 @@
 package com.civis.utils.opennlp.models.contactperson;
 
 
+import com.civis.utils.opennlp.models.BaseSpan;
+
 /**
  * Contact person span.
  */
-public class ContactPersonSpan {
+public class ContactPersonSpan extends BaseSpan {
 
     public static final String PREFIX_TYPE_PERSON = "person";
     public static final String PREFIX_TYPE_SALUTATION = "salutation";
@@ -28,34 +30,33 @@ public class ContactPersonSpan {
     private String firstName;
     private String secondName;
     private String sex;
-    private Double probability;
 
 
     public ContactPersonSpan() {
     }
 
     public ContactPersonSpan(String firstName, String secondName) {
-        this.firstName = firstName;
-        this.secondName = secondName;
+        setFirstName(firstName);
+        setSecondName(secondName);
     }
 
     public ContactPersonSpan(String firstName, String secondName,String sex) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.sex = sex;
+        setFirstName(firstName);
+        setSecondName(secondName);
+        setSex(sex);
     }
 
     public ContactPersonSpan(String firstName, String secondName, Double probability) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.probability = probability;
+        super(probability);
+        setFirstName(firstName);
+        setSecondName(secondName);
     }
 
     public ContactPersonSpan(String firstName, String secondName, String sex, Double probability) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.sex = sex;
-        this.probability = probability;
+        super(probability);
+        setFirstName(firstName);
+        setSecondName(secondName);
+        setSex(sex);
     }
 
     public String getSex() {
@@ -80,14 +81,6 @@ public class ContactPersonSpan {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
-    }
-
-    public Double getProbability() {
-        return probability;
-    }
-
-    public void setProbability(Double probability) {
-        this.probability = probability;
     }
 
     @Override

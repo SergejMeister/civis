@@ -2,6 +2,7 @@ package com.civis.utils.opennlp.features;
 
 import opennlp.tools.util.featuregen.FeatureGeneratorAdapter;
 import opennlp.tools.util.featuregen.StringPattern;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -60,22 +61,15 @@ public class AddressFeature extends FeatureGeneratorAdapter {
         }
     }
 
-    private boolean isNotBlank(String token) {
-        return token != null && token.length() > 0;
-    }
-
     private Boolean checkWord(String token) {
-        if (isNotBlank(token)) {
-            StringPattern stringPattern = StringPattern.recognize(token);
-            return stringPattern.isInitialCapitalLetter() && STREET_PATTERN.matcher(token).matches();
-        }
-        return false;
+        return StringUtils.isNotBlank(token) && StringPattern.recognize(token).isInitialCapitalLetter() &&
+                STREET_PATTERN.matcher(token).matches();
     }
 
     private Boolean checkCountry(String[] tokens, int maybeCountryIndex) {
         if (maybeCountryIndex < tokens.length) {
             String maybeCountryValue = tokens[maybeCountryIndex];
-            if (isNotBlank(maybeCountryValue)) {
+            if (StringUtils.isNotBlank(maybeCountryValue)) {
                 StringPattern stringPattern = StringPattern.recognize(maybeCountryValue);
                 return stringPattern.isInitialCapitalLetter() && STREET_PATTERN.matcher(maybeCountryValue).matches();
             }
@@ -85,17 +79,10 @@ public class AddressFeature extends FeatureGeneratorAdapter {
     }
 
     private Boolean checkDigit(String token) {
-        if (isNotBlank(token)) {
-            StringPattern stringPattern = StringPattern.recognize(token);
-            return stringPattern.isAllDigit();
-        }
-        return false;
+        return StringUtils.isNotBlank(token) && StringPattern.recognize(token).isAllDigit();
     }
 
     private Boolean checkStreetNumber(String token) {
-        if (isNotBlank(token)) {
-            return StreetNumberFeature.STREET_NUMBER_PATTERN.matcher(token).matches();
-        }
-        return false;
+        return StringUtils.isNotBlank(token) && StreetNumberFeature.STREET_NUMBER_PATTERN.matcher(token).matches();
     }
 }

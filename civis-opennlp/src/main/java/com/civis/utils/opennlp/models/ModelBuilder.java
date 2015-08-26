@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
 
 /**
  * This is a help utility class to create a new model for openNLP frameworks.
- * <p>
+ * <p/>
  * The text format should allow the form:
  * -one sentence per line
  * -names marked up with <START> and <END> tags
@@ -27,7 +27,7 @@ public class ModelBuilder {
     /**
      * Load trainings data, train the model and create output file.
      *
-     * @param inputPath relative input path
+     * @param inputPath  relative input path
      * @param outputPath relative output path
      */
     public static void build(String inputPath, String outputPath) throws
@@ -47,38 +47,6 @@ public class ModelBuilder {
         FilterOutputStream modelOut = null;
         try {
             modelOut = new BufferedOutputStream(new FileOutputStream(outputPath));
-            model.serialize(modelOut);
-        } finally {
-            if (modelOut != null) {
-                modelOut.close();
-            }
-        }
-    }
-
-
-    /**
-     * Load trainings data, train the model and create output file.
-     */
-    public static void build(String inputPath, String trainFileName, String outputPath, String modelName) throws
-            IOException {
-        String trainUrl = inputPath + "/" + trainFileName;
-        Charset charset = Charset.forName("UTF-8");
-
-
-        TokenNameFinderModel model;
-        ObjectStream<NameSample> sampleStream = null;
-        try {
-            ObjectStream<String> lineStream = new PlainTextByLineStream(new FileInputStream(trainUrl), charset);
-            sampleStream = new NameSampleDataStream(lineStream);
-            model = ContactPersonFinderMe.train("de", "person", sampleStream);
-        } finally {
-            sampleStream.close();
-        }
-        //NameFinderME.train
-        String modelFilePath = outputPath + "/" + modelName + ".bin";
-        FilterOutputStream modelOut = null;
-        try {
-            modelOut = new BufferedOutputStream(new FileOutputStream(modelFilePath));
             model.serialize(modelOut);
         } finally {
             if (modelOut != null) {

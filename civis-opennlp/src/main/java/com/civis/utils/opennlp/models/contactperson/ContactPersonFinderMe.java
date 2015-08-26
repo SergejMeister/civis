@@ -45,7 +45,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- *
+ * This is a contact person model.
+ *<p>
+ * Model include logic for model training and implements interface to find address in plain text.
  */
 public class ContactPersonFinderMe implements ContactPersonFinder {
 
@@ -55,13 +57,13 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
     private static int DEFAULT_BEAM_SIZE = 3;
     private final List<String> manSalutations;
     private final List<String> womenSalutations;
-    protected MaxentModel model;
     protected NameContextGenerator contextGenerator;
     private AdditionalContextFeatureGenerator additionalContextFeatureGenerator;
     private FirstNameFeatureGenerator firstNameFeatureGenerator;
     private Sequence bestSequence;
     private BeamSearch<String> beam;
     private Map<String, String> mapNamesGender;
+    protected MaxentModel model;
 
     public ContactPersonFinderMe(TokenNameFinderModel model) {
         this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
@@ -78,26 +80,7 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
 
         //TODO research sequence validator.
         SequenceValidator<String> sequenceValidator = new ContactPersonFinderSequenceValidator();
-        this.beam = new BeamSearch<>(DEFAULT_BEAM_SIZE, this.contextGenerator, this.model, sequenceValidator,
-                DEFAULT_BEAM_SIZE);
-    }
-
-    public ContactPersonFinderMe(TokenNameFinderModel model, AdaptiveFeatureGenerator generator) {
-        this.manSalutations = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
-        this.womenSalutations = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
-        initMapNamesGender();
-
-        Set<String> excludeNames = generateExcludeNames();
-        this.firstNameFeatureGenerator = new FirstNameFeatureGenerator(this.mapNamesGender.keySet(), excludeNames);
-        this.additionalContextFeatureGenerator = new AdditionalContextFeatureGenerator();
-        this.model = model.getNameFinderModel();
-        this.contextGenerator = new DefaultNameContextGenerator(generator);
-        this.contextGenerator.addFeatureGenerator(firstNameFeatureGenerator);
-
-        //TODO research sequence validator.
-        SequenceValidator<String> sequenceValidator = new ContactPersonFinderSequenceValidator();
-        this.beam = new BeamSearch<>(DEFAULT_BEAM_SIZE, this.contextGenerator, this.model, sequenceValidator,
-                DEFAULT_BEAM_SIZE);
+        this.beam = new BeamSearch<>(DEFAULT_BEAM_SIZE, this.contextGenerator, this.model, sequenceValidator, DEFAULT_BEAM_SIZE);
     }
 
     private static AdaptiveFeatureGenerator createDefaultFeatureGenerator() {
@@ -121,17 +104,6 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
         TrainingParameters trainParams = TrainingParameters.defaultParams();
         trainParams.put("Cutoff", Integer.toString(cutoff));
         return train(languageCode, type, samples, trainParams, Collections.emptyMap());
-    }
-
-    public static TokenNameFinderModel train(String languageCode, String type, ObjectStream<NameSample> samples)
-            throws IOException {
-        return train(languageCode, type, samples, TrainingParameters.defaultParams(),
-                Collections.emptyMap());
-    }
-
-    public static TokenNameFinderModel train(String languageCode, String type, ObjectStream<NameSample> samples,
-                                             Map<String, Object> resources) throws IOException {
-        return train(languageCode, type, samples, TrainingParameters.defaultParams(), resources);
     }
 
     public static TokenNameFinderModel train(String languageCode, String type, ObjectStream<NameSample> samples,
@@ -204,7 +176,7 @@ public class ContactPersonFinderMe implements ContactPersonFinder {
                 end = li + 1;
             } else if (chunkTag.endsWith("cont")) {
                 end = li + 1;
-            } else if (chunkTag.endsWith("other") && start != -1) {
+            } else if (start != -1 && chunkTag.endsWith("other")) {
                 spans.add(new Span(start, end, extractNameType(c.get(li - 1))));
                 start = -1;
                 end = -1;

@@ -21,8 +21,7 @@ public class NumberFeature extends FeatureGeneratorAdapter {
     public void createFeatures(List<String> features, String[] tokens, int index, String[] previousOutcomes) {
         String token = tokens[index];
         if (token != null && token.length() > 0) {
-            StringPattern stringPattern = StringPattern.recognize(token);
-            if (stringPattern.isAllDigit()) {
+            if (StringPattern.recognize(token).isAllDigit()) {
                 features.add(NUMBER_PREFIX + "=" + token.toLowerCase());
             }
         }

@@ -1,5 +1,7 @@
 package com.civis.utils.opennlp.models;
 
+import com.civis.utils.opennlp.models.address.AddressFinder;
+import com.civis.utils.opennlp.models.address.AddressFinderMe;
 import com.civis.utils.opennlp.models.contactperson.ContactPersonFinder;
 import com.civis.utils.opennlp.models.contactperson.ContactPersonFinderMe;
 import opennlp.tools.namefind.TokenNameFinderModel;
@@ -34,5 +36,17 @@ public final class ModelFactory {
         }
 
         throw new ModelLoadException(ModelPath.DE_CONTACT_PERSON_BIN);
+    }
+
+    public static AddressFinder getAddressFinder() {
+        try (InputStream tokenNameFinderModelInputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream(ModelPath.DE_ADDRESS_BIN)) {
+            TokenNameFinderModel tokenNameFinderModel = new TokenNameFinderModel(tokenNameFinderModelInputStream);
+            return new AddressFinderMe(tokenNameFinderModel);
+        } catch (Exception e) {
+            LOG.error("Models can not be loaded successfully!", e);
+        }
+
+        throw new ModelLoadException(ModelPath.DE_ADDRESS_BIN);
     }
 }

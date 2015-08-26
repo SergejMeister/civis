@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class StreetNumberFeature extends FeatureGeneratorAdapter {
 
     public static final String STREET_NUMBER_PREFIX = "sn";
-    public static final Pattern STREET_NUMBER_PATTERN = Pattern.compile("[0-9-]+");
+    public static final Pattern STREET_NUMBER_PATTERN = Pattern.compile("[0-9-]+[0-9,]$");
 
 
     public StreetNumberFeature() {

@@ -21,8 +21,7 @@ public class FirstCapitalLetterFeature extends FeatureGeneratorAdapter {
     public void createFeatures(List<String> features, String[] tokens, int index, String[] previousOutcomes) {
         String token = tokens[index];
         if (token != null && token.length() > 0) {
-            StringPattern stringPattern = StringPattern.recognize(token);
-            if (stringPattern.isInitialCapitalLetter()) {
+            if (StringPattern.recognize(token).isInitialCapitalLetter()) {
                 features.add(FIRSTLETTER_UPPERCASE_PREFIX + "=" + token.toLowerCase());
             }
         }

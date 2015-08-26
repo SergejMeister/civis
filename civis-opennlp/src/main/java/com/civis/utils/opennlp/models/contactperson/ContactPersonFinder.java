@@ -5,7 +5,7 @@ import opennlp.tools.tokenize.TokenizerModel;
 import java.util.List;
 
 /**
- * ContactPersonFinder interface include methods
+ * This interface include methods to find contact person.
  */
 public interface ContactPersonFinder {
 

@@ -27,7 +27,14 @@ public class StreetNumberFeatureTest extends BaseFeatureTest {
 
         features = createFeatures("Meine Adresse ist BerlinerStr. 13-108 12207 Berlin");
         Assert.assertEquals("Should be 2.", 2, features.size());
+
+        features = createFeatures("Meine Adresse ist Südstraße 1,23 53175 Bonn");
+        Assert.assertEquals("Should be 1 because comma in center.", 1, features.size());
+
+        features = createFeatures("Meine Adresse ist Südstraße 123, 53175 Bonn");
+        Assert.assertEquals("Should be 2, because comma at the end", 2, features.size());
     }
+
 
     public void testNullAndEmptyToken() {
         List<String> features = new ArrayList<>();
@@ -49,6 +56,6 @@ public class StreetNumberFeatureTest extends BaseFeatureTest {
 
     private List<String> createFeatures(String text) {
         StreetNumberFeature streetNumberFeature = new StreetNumberFeature();
-        return createFeatures(text,streetNumberFeature);
+        return createFeatures(text, streetNumberFeature);
     }
 }
