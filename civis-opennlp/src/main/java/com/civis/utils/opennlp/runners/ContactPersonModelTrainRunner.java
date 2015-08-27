@@ -17,12 +17,17 @@
 package com.civis.utils.opennlp.runners;
 
 
-import com.civis.utils.opennlp.models.ModelBuilder;
+import com.civis.utils.opennlp.models.TrainConfigData;
+import com.civis.utils.opennlp.models.TrainConfigDataBuilder;
+import com.civis.utils.opennlp.models.contactperson.ContactPersonFinderMe;
+import com.civis.utils.opennlp.utils.IOTrain;
+import opennlp.tools.namefind.NameSample;
+import opennlp.tools.namefind.TokenNameFinderModel;
+import opennlp.tools.util.ObjectStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * Utility class to train a model.
@@ -32,14 +37,26 @@ public class ContactPersonModelTrainRunner {
     private final static Logger LOG = LoggerFactory.getLogger(ContactPersonModelTrainRunner.class);
 
     public static void main(String[] args) {
-        URL resourceTrainUrl = Thread.currentThread().getContextClassLoader().getResource("train");
-        String dePersonTrain = resourceTrainUrl.getPath() + "/formated.txt";
-        URL resourceModelUrl = Thread.currentThread().getContextClassLoader().getResource("models");
-        String modelOutputPath = resourceModelUrl.getPath() + "/de-contact-person.bin";
+        ObjectStream<NameSample> sampleStream = null;
         try {
-            ModelBuilder.build(dePersonTrain, modelOutputPath);
-        } catch (IOException e) {
+            sampleStream = IOTrain.readData("contact-train.txt");
+            TrainConfigData trainConfigData =
+                    new TrainConfigDataBuilder().setLanguageCode("de").setType("contact-person")
+                            .setSamples(sampleStream)
+                            .putCutoffIntoTrainingParameters("1").build();
+
+            TokenNameFinderModel model = ContactPersonFinderMe.initializeTrainModel(trainConfigData).train();
+            IOTrain.writeData(model, "de-contact-person.bin");
+        } catch (Exception e) {
             LOG.error("Exception occurred in model build process", e);
+        } finally {
+            if (sampleStream != null) {
+                try {
+                    sampleStream.close();
+                } catch (IOException e) {
+                    LOG.error(e.getMessage());
+                }
+            }
         }
     }
 }

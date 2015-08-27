@@ -28,8 +28,7 @@ public class AddressFinderSequenceValidator implements SequenceValidator<String>
     public boolean validSequence(int index, String[] inputSequence, String[] outcomesSequence, String outcome) {
         if (outcome.startsWith("address")) {
             if (outcome.endsWith("start")) {
-                StringPattern stringPattern = StringPattern.recognize(inputSequence[index]);
-                return stringPattern.isInitialCapitalLetter();
+                return StringPattern.recognize(inputSequence[index]).isInitialCapitalLetter();
             } else if (outcome.endsWith("count")) {
                 String sequence = inputSequence[index];
                 StringPattern stringPattern = StringPattern.recognize(sequence);

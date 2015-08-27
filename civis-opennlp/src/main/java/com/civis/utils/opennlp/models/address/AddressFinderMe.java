@@ -27,6 +27,7 @@ import com.civis.utils.opennlp.models.BaseModel;
 import com.civis.utils.opennlp.models.ModelPath;
 import com.civis.utils.opennlp.models.TrainConfigData;
 import com.civis.utils.opennlp.models.TrainModel;
+import com.civis.utils.opennlp.utils.Constants;
 import com.civis.utils.opennlp.validators.AddressFinderSequenceValidator;
 import opennlp.tools.namefind.DefaultNameContextGenerator;
 import opennlp.tools.namefind.NameContextGenerator;
@@ -91,10 +92,6 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         setDefaultTrainingParametersIfNull();
     }
 
-    //-------------------------------------------------------------------------------------------------------
-    //------------------------- Train Logic ------------------------------------------------------------------
-    //-------------------------------------------------------------------------------------------------------
-
     /**
      * Train models.
      * <p/>
@@ -114,6 +111,13 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         return new AddressFinderMe(trainConfigData);
     }
 
+    //-------------------------------------------------------------------------------------------------------
+    //------------------------- Train Logic -----------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdaptiveFeatureGenerator createDefaultFeatureGenerator() {
         AdaptiveFeatureGenerator[] defaultFeatures =
@@ -131,6 +135,9 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
     //------------------------- Find Logic ------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<AddressSpan> find(String text) {
         try (InputStream tokenizerModelInputStream = Thread.currentThread().getContextClassLoader()
@@ -144,6 +151,9 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         return Collections.emptyList();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<AddressSpan> find(String text, TokenizerModel tokenizerModel) {
         Tokenizer tokenizer = new TokenizerME(tokenizerModel);
@@ -151,6 +161,9 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         return find(tokens);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<AddressSpan> find(String[] tokens) {
         Span[] spans = this.find(tokens, EMPTY);
@@ -190,7 +203,7 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         Set<String> zipSet = extractZips();
         String zip = findSetValueInToken(tokens, zipSet);
         addressSpan.setZip(zip);
-        addressSpan.setCountry("Deutschland");
+        addressSpan.setCountry(Constants.DEFAULT_COUNTRY);
         if (StringUtils.isNotBlank(zip)) {
             zipSet.clear();
             Set<String> citySet = extractCitiesByZip(zip);
@@ -277,5 +290,15 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
         }
 
         return spans.toArray(new Span[spans.size()]);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void clearAdaptiveData() {
+        contextGenerator.clearAdaptiveData();
+        csvAddressDataList.clear();
+        countries.clear();
     }
 }

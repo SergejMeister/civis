@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-package com.civis.utils.opennlp.models.contactperson;
+package com.civis.utils.opennlp.utils;
 
-import com.civis.utils.opennlp.models.DefaultFinder;
 
-/**
- * This interface include methods to find contact person.
- */
-public interface ContactPersonFinder extends DefaultFinder<ContactPersonSpan> {
+import java.util.Arrays;
+import java.util.List;
 
-    /**
-     * Clear Data.
-     */
-    void clearAdaptiveData();
+public class Constants {
+
+    public static final List<String> MAN_SALUTATIONS = Arrays.asList("Herr", "Herrn", "Mr.", "Mr");
+    public static final List<String> WOMEN_SALUTATIONS = Arrays.asList("Frau", "Ms.", "Ms", "Mrs.", "Mrs");
+    public static final String DEFAULT_COUNTRY = "Deutschland";
 }

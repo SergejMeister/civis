@@ -18,6 +18,7 @@ package com.civis.utils.opennlp.models.contactperson;
 
 
 import com.civis.utils.opennlp.models.BaseSpan;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Contact person span.
@@ -32,30 +33,14 @@ public class ContactPersonSpan extends BaseSpan {
     private String sex;
 
 
-    public ContactPersonSpan() {
-    }
-
-    public ContactPersonSpan(String firstName, String secondName) {
-        setFirstName(firstName);
-        setSecondName(secondName);
-    }
-
-    public ContactPersonSpan(String firstName, String secondName,String sex) {
+    public ContactPersonSpan(String firstName, String secondName, String sex) {
         setFirstName(firstName);
         setSecondName(secondName);
         setSex(sex);
     }
 
-    public ContactPersonSpan(String firstName, String secondName, Double probability) {
+    public ContactPersonSpan(Double probability, String sex) {
         super(probability);
-        setFirstName(firstName);
-        setSecondName(secondName);
-    }
-
-    public ContactPersonSpan(String firstName, String secondName, String sex, Double probability) {
-        super(probability);
-        setFirstName(firstName);
-        setSecondName(secondName);
         setSex(sex);
     }
 
@@ -84,59 +69,67 @@ public class ContactPersonSpan extends BaseSpan {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (this == other) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (!(other instanceof ContactPersonSpan)) {
+        if (!(o instanceof ContactPersonSpan)) {
             return false;
         }
 
-        ContactPersonSpan that = (ContactPersonSpan) other;
+        ContactPersonSpan that = (ContactPersonSpan) o;
 
-        if (getFirstName() == null) {
-            if (that.getFirstName() != null) {
-                return false;
-            }
-        } else {
-            if (!getFirstName().equals(that.getFirstName())) {
-                return false;
-            }
+        if (getFirstName() != null ? !getFirstName().equals(that.getFirstName()) : that.getFirstName() != null) {
+            return false;
         }
-
-        if (getSecondName() == null) {
-            if (that.getSecondName() != null) {
-                return false;
-            }
-        } else {
-            if (!getSecondName().equals(that.getSecondName())) {
-                return false;
-            }
+        if (getSecondName() != null ? !getSecondName().equals(that.getSecondName()) : that.getSecondName() != null) {
+            return false;
         }
-
-        if (getSex() == null) {
-            if (that.getSex() != null) {
-                return false;
-            }
-        }
-
-        return getSex().equals(that.getSex());
+        return !(getSex() != null ? !getSex().equals(that.getSex()) : that.getSex() != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result = -1;
-        if (this.sex != null) {
-            result = result + getSex().hashCode();
+        int result = getFirstName() != null ? getFirstName().hashCode() : 0;
+        result = 31 * result + (getSecondName() != null ? getSecondName().hashCode() : 0);
+        result = 31 * result + (getSex() != null ? getSex().hashCode() : 0);
+        return result;
+    }
+
+    /**
+     * Return firstName secondName.
+     * <p/>
+     * firstName is null, return only secondName.
+     * secondName is null, return only firstName.
+     * firstName and secondName are null, return empty string.
+     */
+    public String getFullName() {
+        StringBuilder sb = new StringBuilder();
+        if (StringUtils.isNotBlank(firstName)) {
+            sb.append(firstName);
         }
-        if (this.firstName != null) {
-            result = 31 * getFirstName().hashCode();
-        }
-        if (this.secondName != null) {
-            result = 31 * result + getSecondName().hashCode();
+        if (StringUtils.isNotBlank(secondName)) {
+            sb.append(" ").append(secondName);
         }
 
-        return result;
+        return sb.toString();
+    }
+
+    /**
+     * Remove whitespace between first and second name.
+     * <p/>
+     * Alexander Rom return AlexanderRom
+     */
+    public String getFullNameWithoutWhiteSpace() {
+        return StringUtils.deleteWhitespace(getFullName());
+    }
+
+    /**
+     * Build full name and check if full name contains given value.
+     */
+    public boolean contains(String value) {
+        return !StringUtils.isBlank(value) && getFullNameWithoutWhiteSpace().contains(value);
+
     }
 }
