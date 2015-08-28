@@ -1,0 +1,693 @@
+<!--
+  ~ Copyright 2015 Sergej Meister
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title>Jobagent</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <style type="text/css">#outlook a {
+            padding: 0;
+        }
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            line-height: 1.2em;
+            margin: 0;
+            padding: 0;
+            background-color: #edf2f6;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+
+        #backgroundTable {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            line-height: 100% !important;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        div[yahoo] {
+        }
+
+        .jaadlink {
+            font-weight: bold;
+            color: #0C2577 !important;
+        }
+
+        a.offerLink:hover {
+            color: #0C2577 !important;
+        }
+
+        @media only screen and (max-width: 480px) {
+            div[yahoo] #ad {
+                display: block;
+                background-color: #003b90;
+                color: #ffffff;
+                padding: 5px;
+                font-size: 1.1em;
+            }
+
+            div[yahoo] div[yahoo] div[yahoo] div[yahoo] #joba {
+                padding: 15px 15px 0 !important;
+            }
+
+            .zeroheader {
+                padding: 15px !important;
+            }
+
+            div[yahoo] #ja {
+                width: 100% !important;
+                border-radius: 0 !important;
+            }
+
+            div[yahoo] {
+                padding: 0px !important;
+            }
+
+            div[yahoo] #headline {
+                width: 100% !important;
+                margin-bottom: 0 !important;
+                border-radius: 0 !important;
+                border: 0 !important;
+            }
+
+            div[yahoo] #ja_title {
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+            }
+
+            div[yahoo] .title {
+                padding: 0 0 5px 0;
+            }
+
+            div[yahoo] .ji {
+                padding: 0 !important;
+                border-top: 1px solid #FFF !important;
+                border-bottom: 1px solid #c7c7c7 !important;
+            }
+
+            div[yahoo] .jadd {
+                padding: 15px !important;
+                border-top: none !important;
+                border-top: 3px solid #DBECFE !important;
+                border-bottom: 3px solid #DBECFE !important;
+            }
+
+            div[yahoo] .ji table {
+                display: table !important;
+                width: 100% !important;
+            }
+
+            div[yahoo] .bd, div[yahoo] .bb {
+                height: inherit !important;
+                max-height: inherit !important;
+                text-indent: 0 !important;
+                display: block !important;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            div[yahoo] .bc td {
+                padding: 0 !important;
+                background: transparent !important;
+                border-radius: 0 !important;
+            }
+
+            div[yahoo] .bc td a, div[yahoo] .bd, div[yahoo] .bb a {
+                position: relative;
+                color: #FFF !important;
+                margin: 5px 0 5px 0;
+                height: 38px !important;
+                line-height: 38px !important;
+                text-align: center;
+                font-weight: bold;
+                font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                text-decoration: none !important;
+                border-radius: 5px;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+                display: block !important;
+                max-height: inherit !important;
+                font-size: 14px !important;
+                border: 1px solid #3875CC !important;
+            }
+
+            div[yahoo] .bd, div[yahoo] .bb a {
+                color: #003b90 !important;
+                background: #DEDEDE;
+                background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(229, 229, 229, 1) 100%);
+                background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(229, 229, 229, 1) 100%);
+                background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(229, 229, 229, 1) 100%);
+                background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(229, 229, 229, 1) 100%);
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(229, 229, 229, 1) 100%);
+                box-shadow: inset 0 -1px 1px rgba(0, 0, 0, .2), inset 0 1px 1px rgba(255, 255, 255, .4);
+                border: 1px solid #CCCCCC !important;
+                text-transform: uppercase;
+                margin: 10px 0;
+            }
+
+            div[yahoo] .bc td a {
+                color: #FFF !important;
+                background-color: #4188ED !important;
+                background: -moz-linear-gradient(top, rgba(0, 60, 148, 1) 0, rgba(0, 54, 133, 1) 100%) !important;
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 54, 133, 1)), color-stop(100%, rgba(0, 54, 133, 1))) !important;
+                background: -o-linear-gradient(top, rgba(0, 60, 148, 1) 0, rgba(0, 54, 133, 1) 100%) !important;
+                background: -ms-linear-gradient(top, rgba(0, 60, 148, 1) 0, rgba(0, 54, 133, 1) 100%) !important;
+                background: linear-gradient(to bottom, rgba(0, 60, 148, 1) 0, rgba(0, 54, 133, 1) 100%) !important;
+                box-shadow: inset 0 -1px 1px rgba(0, 0, 0, .2), inset 0 1px 1px rgba(255, 255, 255, .4) !important;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, .3) !important;
+                border: 1px solid #003685 !important;
+                padding: 0 !important;
+            }
+
+            div[yahoo] .bc {
+                width: 100% !important;
+            }
+
+            div[yahoo] .nlad td {
+                padding: 0 0 10px 0 !important;
+            }
+
+            div[yahoo] #logo {
+                padding-top: 15px !important;
+                background: #FFF !important;
+            }
+
+            div[yahoo] .bd a:active, div[yahoo] .bb a:active {
+                padding-top: 1px;
+                height: 37px !important;
+                box-shadow: inset 0 1px 4px rgba(0, 0, 0, .4) !important;
+            }
+
+            div[yahoo] table.nd, div[yahoo] td.nd, div[yahoo] a.nd, div[yahoo] span.nd, div[yahoo] br.nd, div[yahoo] img.nd {
+                display: none !important;
+                max-height: 0 !important;
+                font-size: 0 !important;
+            }
+
+            div[yahoo] .np {
+                padding-bottom: 0 !important;
+            }
+
+            div[yahoo] .vj {
+                text-indent: 0 !important;
+                display: block !important;
+                font-size: 11px !important;
+                padding: 5px 3px 8px 3px !important;
+                background: #4188ed;
+                color: #FFF;
+            }
+
+            div[yahoo] .b {
+                display: block;
+                padding: 20px 0 0 !important;
+            }
+
+            div[yahoo] .unsub_space {
+                display: block;
+                margin: 0 0 10px !important;
+            }
+
+            div[yahoo] .display_mobile_seperator {
+                display: block !important;
+                font-size: 11px !important;
+                padding: 5px 3px 8px 3px !important;
+            }
+
+            div[yahoo] .rsm {
+                position: relative;
+                display: block !important;
+                height: inherit !important;
+                max-height: inherit !important;
+                text-indent: 0 !important;
+            }
+
+            div[yahoo] .rsm a {
+                display: block !important;
+                padding: 15px 15px 11px;
+                overflow: auto;
+                text-decoration: none;
+                background: #FDFDFD;
+                background: -moz-linear-gradient(top, rgba(253, 253, 253, 1) 0, rgba(228, 235, 242, 1) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 1)), color-stop(100%, rgba(228, 235, 242, 1)));
+                background: -webkit-linear-gradient(top, rgba(253, 253, 253, 1) 0, rgba(228, 235, 242, 1) 100%);
+                background: -o-linear-gradient(top, rgba(253, 253, 253, 1) 0, rgba(228, 235, 242, 1) 100%);
+                background: -ms-linear-gradient(top, rgba(253, 253, 253, 1) 0, rgba(228, 235, 242, 1) 100%);
+                background: linear-gradient(top, rgba(253, 253, 253, 1) 0, rgba(228, 235, 242, 1) 100%);
+            }
+
+            div[yahoo] .rsm small {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                width: 7px;
+                height: 12px;
+                margin-top: -4px;
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAMAAACZS1ciAAAAUVBMVEUMJXcLIm8MJXcMJXcMJXcLIm8MJXcMJXcMJXcMJXcMJXcMJXcLJHQLJHQMJXcMJXcLI3AMJXcMJXcLI3EMJXcMJXcMJXcAAAALI3ELJHYMJXcu0tPDAAAAGHRSTlNM9lBRbPMZTW4ccG+3uY+T4xow2wyQAwA2BELfAAAAR0lEQVR42iXMSQ7AIAxD0XSeC5TSEN//oMWQzZMi60v6lCc432pCDFR3TA/VwbJQDd5GOntbi73lpfwPdNzdiFvtXK3jWvcHOZcGeesOMLgAAAAASUVORK5CYII=') 0 0 no-repeat;
+            }
+
+            div[yahoo] .rsm a:active {
+                box-shadow: 0 -4px 19px rgba(0, 0, 0, .2) inset, 0 2px 4px rgba(0, 0, 0, .3) inset, 0 0 1px rgba(0, 0, 0, .1) inset;
+            }
+
+            div[yahoo] .rsm a span {
+                display: block;
+                font-size: 14px;
+                padding: 0 0 5px;
+                color: #0C2577;
+                font-weight: bold;
+            }
+
+            div[yahoo] .rsm a i {
+                color: #444;
+                font-size: 12px;
+                font-style: normal;
+                text-shadow: 0 1px 0 #FFF;
+            }
+
+            div[yahoo] #wrapper {
+                max-width: none;
+                width: 100%;
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            div[yahoo] .rsm small {
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAYCAMAAAD9GTxlAAAAVFBMVEULI3EMJXcMJXcLIm8MJXcMJXcLJHQMJXcMJXcLIm8MJXcMJXcMJXcLJHQMJXcLIm8MJXcMJXcMJXcLJHQLI3EMJXcMJXcMJXcAAAALJHYLI3EMJXd1arwBAAAAGXRSTlPZbhv2TJG4kJL0GkttuU3zbByTt9swDAMAufiOUwAAAIRJREFUeNpVz1kSgzAMA9BAKWXfQhJD7n/P2h2JQv5exiPZ7pPk9lz28cHsugfzHP4c1Wd/MW3qYyFFhkM/mkTKdKp9JCW06r0kZd1/BaTE2goqUlBw8W0sOOxteMJwZ1GvwKLZilYU9bbGyDUWW3JLOKGxyIEnIJJUtbfzEUkikkQk3hcjqh4qz7YUhQAAAABJRU5ErkJggg==') 0 0 no-repeat;
+                background-size: 7px 12px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            div[yahoo] .sep {
+                display: none;
+            }
+
+            div[yahoo] .tablet_btn {
+                font-family: 11px/15px "Trebuchet MS", Arial, Helvetica, sans-serif;
+                text-shadow: 0px 1px 0px #FFF;
+                display: inline-block;
+                border-radius: 5px;
+                border: 1px solid #CCC;
+                color: #666 !important;
+                text-decoration: none !important;
+                padding: 2px 7px;
+                margin: 0 5px;
+                box-shadow: inset 0 0 4px rgba(255, 255, 255, .8);
+                background: rgb(244, 246, 247);
+                background: -moz-linear-gradient(top, rgba(244, 246, 247, 1) 0%, rgba(222, 223, 226, 1) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(244, 246, 247, 1)), color-stop(100%, rgba(222, 223, 226, 1)));
+                background: -webkit-linear-gradient(top, rgba(244, 246, 247, 1) 0%, rgba(222, 223, 226, 1) 100%);
+                background: -o-linear-gradient(top, rgba(244, 246, 247, 1) 0%, rgba(222, 223, 226, 1) 100%);
+                background: -ms-linear-gradient(top, rgba(244, 246, 247, 1) 0%, rgba(222, 223, 226, 1) 100%);
+                background: linear-gradient(to bottom, rgba(244, 246, 247, 1) 0%, rgba(222, 223, 226, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f6f7', endColorstr='#dedfe2', GradientType=0);
+            }
+        }</style>
+        <!--[if IEMobile]>
+        <style type="text/css">#wrapper {
+            padding: none !important;
+        }
+
+        body {
+            background: transparent !important;
+        }</style><![endif]--><!--[if lt ie 7]>
+        <style type="text/css">#ja {
+            width: 590px !important;
+        }</style><![endif]--><!--[if mso]>
+        <style type="text/css">#ja {
+            width: 590px !important;
+        }</style><![endif]--><!--[if gte mso 12]>
+        <style type="text/css">#ja {
+            width: 590px !important;
+        }</style><![endif]--></head>
+    <body style="background:#edf2f6;padding:0;margin:0">
+        <div style="text-indent:-9999px;height:0px;max-height:0px;font-size:0px;color:#FFF;text-align:center;overflow: hidden">
+            Wir haben 8 neue Stellenangebote gefunden, welche Ihren Suchkriterien entsprechen:
+        </div>
+        <div id="wrapper" align="center" style="padding:5px 0 5px 0;margin: 0 auto; max-width:590px;background:#edf2f6;"
+             yahoo="fix">
+            <table id="ja" border="0" cellspacing="0" cellpadding="0"
+                   style="position:relative;font-family:'Trebuchet MS',sans-serif;font-size: 11px;border-radius:10px;box-shadow: 0 0 30px #ced5da;color:#444">
+                <tr>
+                    <td><a href="#listview"
+                           style="font-size:0px;padding:0px;text-decoration:none;text-align:center;display:none;text-indent:-9999px;"
+                           class="vj">Stellenangebote anzeigen</a></td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#FFF;">
+                            <tr>
+                                <td align="left" valign="top" style="padding:15px 15px 0 15px;background:#FFF;"
+                                    id="joba"><h1
+                                        style="color: #0C2577;font-size:28px;font-weight:normal;margin:0;line-height:30px">
+                                    StepStone Job Agent<br/><a href="#date" id="date"
+                                                               style="color: #ccc; font-size: 16px; line-height: 20px; text-decoration: none;">24.04.2015</a>
+                                </h1></td>
+                                <td align="right" valign="top" id="logo"
+                                    style="padding:15px 15px 0 15px; background:#FFFFFF"><img
+                                        src="http://media.stepstone.com/5/resources/images/stepstone-logo-100px.gif"
+                                        alt="StepStone" class="nd" style="max-width: 81px;" width="81"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="nd"
+                                    style="padding:15px 15px 5px 15px;font:11px/20px Verdana,sans-serif;background: #FFF;">
+                                    Wir haben 8 neue Stellenangebote gefunden, welche Ihren Suchkriterien entsprechen:
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" style="padding-bottom:15px;padding-top:10px;background: #FFF" class="np">
+                        <table cellpadding="0" cellspacing="0" border="0" id="headline"
+                               style="width:70%;background:#003B90;border-radius:0 10px 10px 0">
+                            <tr>
+                                <td id="ja_title"
+                                    style="color:#FFF;font-size:16px;line-height:22px;vertical-align:middle;padding: 10px 15px 10px 15px"
+                                    valign="middle">"Stellenangebote für &quot;Qualitätssicherung, Qualitätsprüfung, ...&quot;,
+                                    in &quot;Berlin, ...&quot; +1 weitere Suchkrite..."
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="listview" valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#eff7ff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?2740057,15,4,24,stepstone,de,1,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/4/logo4flow_AG_2033DE.gif"
+                                                             width="80" height="40" alt="4flow"/></a></td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?2740057,15,4,24,stepstone,de,1,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Studentische Mitarbeit in der Softwareentwicklung mit Java</a>
+                                    <br/><b>4flow</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?2740057,15,4,24,stepstone,de,1,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Studentische Mitarbeit in der Softwareentwicklung mit Java</span><i><b>4flow</b> -
+                                Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#ffffff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3275445,15,4,24,stepstone,de,2,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/W/logoWINCOR_NIXDORF_Holding_GmbH____65456DE.gif"
+                                                             width="80" height="40"
+                                                             alt="WINCOR NIXDORF International GmbH"/></a></td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3275445,15,4,24,stepstone,de,2,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Werkstudent/in - Software Entwicklung</a> <br/><b>WINCOR NIXDORF
+                                    International GmbH</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3275445,15,4,24,stepstone,de,2,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Werkstudent/in - Software Entwicklung</span><i><b>WINCOR NIXDORF International
+                                GmbH</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#eff7ff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3274939,15,4,24,stepstone,de,3,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/T/logoToll_Collect_GmbH_7684DE.gif"
+                                                             width="80" height="40" alt="Toll Collect GmbH"/></a></td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3274939,15,4,24,stepstone,de,3,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Werkstudent(in) Testautomatisierung</a> <br/><b>Toll Collect
+                                    GmbH</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3274939,15,4,24,stepstone,de,3,8,m,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Werkstudent(in) Testautomatisierung</span><i><b>Toll Collect GmbH</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#003b90;color:#FFF;font-size:16px;line-height:22px;vertical-align:middle;padding: 10px 15px 10px 15px">
+                        Ähnliche Stellenangebote
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#ffffff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3276812,15,4,24,stepstone,de,4,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/S/logoSabienzia-Technologies-GmbH-146478DE.gif"
+                                                             width="80" height="40" alt="Sabienzia Technologies GmbH"/></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3276812,15,4,24,stepstone,de,4,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Software Engineer (m/w) Java</a> <br/><b>Sabienzia Technologies
+                                    GmbH</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3276812,15,4,24,stepstone,de,4,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Software Engineer (m/w) Java</span><i><b>Sabienzia Technologies GmbH</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#eff7ff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3277864,15,4,24,stepstone,de,5,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/D/logoDIS_AG_Geschäftsbereich_Information_Technology_29362DE.gif"
+                                                             width="80" height="40"
+                                                             alt="DIS AG Geschäftsbereich Information Technology"/></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3277864,15,4,24,stepstone,de,5,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Softwareentwickler (w/m)</a> <br/><b>DIS AG Geschäftsbereich
+                                    Information Technology</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3277864,15,4,24,stepstone,de,5,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Softwareentwickler (w/m)</span><i><b>DIS AG Geschäftsbereich Information
+                                Technology</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#ffffff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3279370,15,4,24,stepstone,de,6,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/E/logoExec-Software-Team-GmbH-2162DE.gif"
+                                                             width="80" height="40" alt="Exec Software Team GmbH"/></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3279370,15,4,24,stepstone,de,6,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Software-Entwickler - Java (m/w)</a> <br/><b>Exec Software Team
+                                    GmbH</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3279370,15,4,24,stepstone,de,6,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Software-Entwickler - Java (m/w)</span><i><b>Exec Software Team GmbH</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#eff7ff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3225704,15,4,24,stepstone,de,7,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/e/logoeBay-Company-4878DE.gif"
+                                                             width="80" height="40" alt="eBay Company"/></a></td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3225704,15,4,24,stepstone,de,7,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Anwendungsentwickler ERP/CRM</a> <br/><b>eBay Company</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3225704,15,4,24,stepstone,de,7,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Anwendungsentwickler ERP/CRM</span><i><b>eBay Company</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" class="ji"
+                        style="border-top:1px solid #DBECFE;padding:10px 15px 10px 15px;background:#ffffff;">
+                        <table cellpadding="0" cellspacing="0" align="left" class="nd" width="100%"
+                               style="font-size: 11px;">
+                            <tr>
+                                <td valign="top" style="padding: 0 10px 10px 0;" width="90"><a
+                                        href="http://www.stepstone.de/ja.cfm?3274968,15,4,24,stepstone,de,8,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,L"
+                                        target="_blank"><img style="border: 1px solid #DBECFE; background: #DBECFE"
+                                                             src="http://www.stepstone.de/upload_de/logo/e/logoeBay-Company-4878DE.gif"
+                                                             width="80" height="40" alt="eBay Company"/></a></td>
+                                <td>
+                                    <a href="http://www.stepstone.de/ja.cfm?3274968,15,4,24,stepstone,de,8,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,T"
+                                       class="offerLink"
+                                       style="font-size:14px;line-height:19px;color:#0C2577;text-decoration:none"
+                                       target="_blank">Senior Agile Software Developer</a> <br/><b>eBay Company</b><br/>Berlin
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none" class="rsm">
+                            <a href="http://www.stepstone.de/ja.cfm?3274968,15,4,24,stepstone,de,8,8,s,cv-insert,os_7_0,8225429,15,4,63D22D9BE24616129,R">
+                                <span>Senior Agile Software Developer</span><i><b>eBay Company</b> - Berlin</i>
+                                <small></small>
+                            </a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="height:0;overflow:hidden;max-height:0;text-indent:-9999px;display:none;text-decoration:none;text-align:center;box-shadow:inset 0 0 30px rgba(0,0,0,.2);background: #EEF3F7"
+                             class="display_mobile_seperator">&nbsp;</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center"
+                        style="padding:15px 15px 15px;border-top:1px solid #DBECFE;background:#ffffff;">
+                        <table cellpadding="0" cellspacing="0" border="0" class="bc">
+                            <tr>
+                                <td style="padding: 5px 15px 5px 15px;background:#0C2577;border-radius:4px"><a
+                                        style=" text-align:center;font-weight:bold;display:block;color:#FFF;text-decoration:none"
+                                        href="http://www.stepstone.de/5/index.cfm?event=resultlist%2EdspJobAgentSearch&amp;cryptedid=600FFA0F8B186A5B96A08AF439D5207A35E7AB47C879EED4C424515635DD254E&amp;jaid=8225429&amp;lang=de&amp;cid=JaJob-cv-insert-04-2015_os_7_0_list&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                                        target="_blank">WEITERE PASSENDE JOBS ANZEIGEN</a></td>
+                            </tr>
+                        </table>
+                        <br style="clear: both"/></td>
+                </tr>
+                <tr>
+                    <td valign="top" class="nd"
+                        style="padding: 0 0 15px 14px;font-family:Verdana,sans-serif;text-align:left;background:#ffffff;">
+                        Wir wünschen Ihnen viel Erfolg bei der Jobsuche!<br/><br/>Ihr StepStone Team<br/><br/><a
+                            href="http://www.stepstone.de?&amp;cid=JaJob-cv-insert-04-2015_os_7_0_home&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                            style="color: #0C2577">www.StepStone.de</a><br/><br/></td>
+                </tr>
+                <tr>
+                    <td style="padding:0 15px 30px 15px;background:#ffffff;" align="center"><a
+                            href="http://www.stepstone.de/5/index.cfm?event=easyjobagent&amp;jaid=8225429&amp;lang=de&amp;cid=JaJob-cv-insert-04-2015_os_7_0_edit&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                            style="color:#0C2577;" class="bd tablet_btn">Job Agent anpassen</a><span
+                            class="nd sep"> | </span><a
+                            href="http://www.stepstone.de/5/index.cfm?event=cvProcess&amp;lang=de&amp;cid=JaJob-cv-insert-04-2015_os_7_0_cv&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                            style="color: #0C2577" class="b tablet_btn">Online-Lebenslauf erstellen</a><span
+                            class="nd sep"> | </span><a
+                            href="http://www.stepstone.de/5/index.cfm?event=easynewsletter&amp;lang=de&amp;cid=JaJob-cv-insert-04-2015_os_7_0_news&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                            style="color: #0C2577" class="b tablet_btn">Newsletter abonnieren</a><span
+                            class="nd sep"> | </span><a
+                            href="http://www.stepstone.de/5/index.cfm?event=unsubscribe&amp;p=1%2C8225429%2CJA%2CE0240551D56A9FC%2C1&amp;lang=de&amp;cid=JaJob-cv-insert-04-2015_os_7_0_del&amp;jacid=8225429-04-2015&amp;sl=63D22D9BE24616129"
+                            style="color: #0C2577" class="b tablet_btn unsub_space">Job Agent löschen</a></td>
+                </tr>
+                <tr>
+                    <td style="padding:0 15px 30px 15px;font:10px Verdana,sans-serif;color:#636363;background:#ffffff;"
+                        align="left">
+                        <div>StepStone Deutschland GmbH,<br/>Sitz der Gesellschaft: Hammer Straße 19 | D-40219
+                            Düsseldorf<br/>Amtsgericht Düsseldorf, HRB 64185<br/>Geschäftsführer: Ralf Baumann, Dr.
+                            Sebastian Dettmers, Simone Reif
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 15px 30px 15px;font:10px Verdana,sans-serif;color:#636363;background:#ffffff;"
+                        align="left">
+                        <div>Job Agent ID: 822&shy;5429, 2015-04-17 19:10:37</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br style="clear: both"/><img alt=""
+                                      src="https://sslwidget.criteo.com/psu/display.js?p1=v%3D2%26wi%3D7713335%26pt1%3D0%26pt2%3D1%26si%3D30&amp;t1=sendevent&amp;resptype=gif"
+                                      width="1" height="1"/></body>
+</html>
