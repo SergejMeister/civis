@@ -110,7 +110,6 @@ public class HtmlParser {
     /**
      * Parse html as plain text.
      */
-    @Deprecated
     public HtmlParser toPlainText() {
         Document doc = Jsoup.parse(content);
         String plainTextWithHTags = doc.text();
