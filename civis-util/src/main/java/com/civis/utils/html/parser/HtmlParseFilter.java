@@ -19,7 +19,7 @@ package com.civis.utils.html.parser;
 import com.civis.utils.html.models.HtmlLink;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,10 +34,12 @@ public class HtmlParseFilter {
      */
     private boolean linkValueCanBeNull;
     private List<String> linkMatcherList;
+    private List<String> ignoreList;
 
     public HtmlParseFilter() {
-        this.linkValueCanBeNull = Boolean.TRUE;
-        this.linkMatcherList = new ArrayList<>();
+        setNullableText(Boolean.TRUE);
+        setLinkMatcherList(Collections.emptyList());
+        setIgnore(Collections.emptyList());
     }
 
     public void setNullableText(Boolean textCanBeNull) {
@@ -78,6 +80,20 @@ public class HtmlParseFilter {
             }
         }
 
+        return Boolean.FALSE;
+    }
+
+
+    public void setIgnore(List<String> ignore) {
+        this.ignoreList = ignore;
+    }
+
+    public Boolean ignore(String value) {
+        for (String ignoreValue : ignoreList) {
+            if (ignoreValue.equals(value)) {
+                return Boolean.TRUE;
+            }
+        }
         return Boolean.FALSE;
     }
 }

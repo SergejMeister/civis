@@ -24,7 +24,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -48,7 +50,6 @@ public class HtmlParser {
      * Is content a html or a plain text!
      * Default html content.
      */
-    private boolean isPlainContent;
     private boolean isHtmlContent;
     private boolean useFilter;
     private String content;
@@ -56,6 +57,7 @@ public class HtmlParser {
 
     private List<HtmlLink> links;
     private List<String> urls;
+    private String mail;
 
 
     /**
@@ -76,7 +78,6 @@ public class HtmlParser {
      * @param isPlainContent true, if content plain text
      */
     public HtmlParser(String content, boolean isPlainContent) {
-        this.isPlainContent = isPlainContent;
         this.isHtmlContent = !isPlainContent;
         this.content = content;
         this.links = new ArrayList<>();
@@ -89,18 +90,32 @@ public class HtmlParser {
         this.htmlParseFilter = htmlParseFilter;
     }
 
+    public static String removeTags(String string) {
+        if (string == null || string.length() == 0) {
+            return string;
+        }
+
+        Matcher m = REMOVE_TAGS.matcher(string);
+        return m.replaceAll("");
+    }
+
+    //TODO: return only one mail, but can be a list of mails!
+    private void parseEmail() {
+        Matcher m = MAIL_PATTERN.matcher(content);
+        while (m.find()) {
+            mail = m.group();
+        }
+    }
+
     /**
-     * Returns all text data.
-     *
-     * @param htmlContent html content.
-     *
-     * @return text.
+     * Parse html as plain text.
      */
-    public static String toPlainText(final String htmlContent) {
-        Document doc = Jsoup.parse(htmlContent);
+    @Deprecated
+    public HtmlParser toPlainText() {
+        Document doc = Jsoup.parse(content);
         String plainTextWithHTags = doc.text();
-        String plainText = removeTags(plainTextWithHTags);
-        String[] words = plainText.split(" ");
+        String text = removeTags(plainTextWithHTags);
+        String[] words = text.split(" ");
         int wordCountPerSentence = 25;
         int wordCount = 0;
         StringBuilder stringBuilder = new StringBuilder();
@@ -117,31 +132,27 @@ public class HtmlParser {
 
         }
 
-        return stringBuilder.toString();
+        content = stringBuilder.toString();
+        return this;
     }
 
-    public static String removeTags(String string) {
-        if (string == null || string.length() == 0) {
-            return string;
-        }
-
-        Matcher m = REMOVE_TAGS.matcher(string);
-        return m.replaceAll("");
-    }
-
-    public static String parseEmail(String plainText) {
-        Matcher m = MAIL_PATTERN.matcher(plainText);
-        while (m.find()) {
-            return m.group();
-        }
-        return null;
-    }
-
-    public void parseUrl() {
-        List<String> result = new ArrayList<>();
+    private void parseUrl() {
+        Set<String> result = new HashSet<>();
         Matcher m = WEB_URL_PATTERN.matcher(content);
         while (m.find()) {
-            result.add(content.substring(m.start(0), m.end(0)));
+            String urlValue = content.substring(m.start(0), m.end(0));
+            if(urlValue.endsWith(")")){
+                urlValue = urlValue.substring(0,urlValue.length() - 1);
+            }
+            if (useFilter) {
+                if (!htmlParseFilter.ignore(urlValue)) {
+                    // with filter
+                    result.add(urlValue);
+                }
+            } else {
+                //without filter
+                result.add(urlValue);
+            }
         }
 
         urls.addAll(result.parallelStream().distinct().collect(Collectors.toList()));
@@ -156,9 +167,16 @@ public class HtmlParser {
         }
     }
 
+    /**
+     * Parse content.
+     * <p/>
+     * Parse href tags, parse urls.
+     */
     public HtmlParser parse() {
         parseLinks();
         parseUrl();
+        parseEmail();
+
         return this;
     }
 
@@ -190,5 +208,13 @@ public class HtmlParser {
      */
     public List<String> getUrls() {
         return urls;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getContent() {
+        return content;
     }
 }
