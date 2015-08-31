@@ -11,7 +11,7 @@ import java.util.List;
 public class StreetNumberFeatureTest extends BaseFeatureTest {
 
 
-    public void testCreateFeatures() throws Exception {
+    public void testCreateFeatures() {
         List<String> features = createFeatures("Ich sage meine Adresse nicht.");
         Assert.assertEquals("There is no number", 0, features.size());
 
@@ -33,6 +33,11 @@ public class StreetNumberFeatureTest extends BaseFeatureTest {
 
         features = createFeatures("Meine Adresse ist Südstraße 123, 53175 Bonn");
         Assert.assertEquals("Should be 2, because comma at the end", 2, features.size());
+    }
+
+    public void testLetterInStreetNumber() {
+        List<String> features = createFeatures("Meine Adresse ist Südstraße 12a, 53175 Bonn");
+        Assert.assertEquals("Should be 2", 2, features.size());
     }
 
 
