@@ -19,13 +19,14 @@ package com.civis.utils.opennlp.models.contactperson;
 import com.civis.utils.opennlp.models.BaseModelTest;
 import com.civis.utils.opennlp.models.ModelFactory;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 
 
 public class ContactPersonFinderTest extends BaseModelTest {
 
-
+    @Test
     public void testAdoJob() {
         String filePath = "text/adoJob.txt";
         String exampleText = getTextExample(filePath);
@@ -39,6 +40,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
         Assert.assertTrue("Probability should be greater than 0.7 !", contactSpan.getProbability() > 0.7);
     }
 
+    @Test
     public void testMatecoJob() {
         String filePath = "text/mateco.txt";
         String exampleText = getTextExample(filePath);
@@ -52,6 +54,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
         Assert.assertTrue("Probability should be greater than 0.7 !", contactSpan.getProbability() > 0.7);
     }
 
+    @Test
     public void testBernerMattnerJob() {
         String filePath = "text/bernerMattnerJob.txt";
         String exampleText = getTextExample(filePath);
@@ -72,6 +75,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
         Assert.assertTrue("Probability should be greater than 0.6 !", contactSpanCaroline.getProbability() > 0.6);
     }
 
+    @Test
     public void testIvuJob() {
         String filePath = "text/ivu.txt";
         String exampleText = getTextExample(filePath);

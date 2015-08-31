@@ -1,18 +1,35 @@
+/*
+ * Copyright 2015 Sergej Meister
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.civis.utils.opennlp.models.address;
 
 import com.civis.utils.csv.address.CSVAddressData;
 import com.civis.utils.csv.address.CSVAddressReader;
 import com.civis.utils.csv.address.CountryReader;
-import junit.framework.TestCase;
 import opennlp.tools.util.Span;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.Set;
 
 
-public class AddressSpanBuilderTest extends TestCase {
+public class AddressSpanBuilderTest {
 
+    @Test
     public void testBuildDefaultAddress() throws Exception {
         String street = "Kurfürstenstraße";
         String streetNr = "12";
@@ -28,6 +45,7 @@ public class AddressSpanBuilderTest extends TestCase {
         Assert.assertNull(addressSpan.getCountry());
     }
 
+    @Test
     public void testBuildStreet() throws Exception {
         String street1_0 = "Brandenburger";
         String street1_1 = "Tor";
@@ -44,6 +62,7 @@ public class AddressSpanBuilderTest extends TestCase {
         Assert.assertNull(addressSpan.getCountry());
     }
 
+    @Test
     public void testBuildWithCSV() throws Exception {
         String street = "Reamurstr.";
         String streetNr = "20";
@@ -63,6 +82,7 @@ public class AddressSpanBuilderTest extends TestCase {
         Assert.assertEquals("Deutschland", addressSpan.getCountry());
     }
 
+    @Test
     public void testBuildAdvancedAddress() throws Exception {
         String street = "Reamurstr.";
         String streetNr = "20";

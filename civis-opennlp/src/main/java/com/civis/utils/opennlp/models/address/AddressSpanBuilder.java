@@ -79,6 +79,15 @@ public class AddressSpanBuilder {
         streetNumber = buildString(streetNumberSpan, tokens);
         Span zipSpan = new Span(streetNumberSpan.getEnd(), streetNumberSpan.getEnd() + 1);
         zip = buildString(zipSpan, tokens);
+        zip = zip.replaceAll("[+.^:,]", "");
+        if (StringUtils.isBlank(zip)) {
+            // token include only special chars like , or .
+            //try next zip token
+            // use case Lindenstr. 19 , 12207 Berlin
+            zipSpan = new Span(zipSpan.getStart() + 1, zipSpan.getEnd() + 1);
+            zip = buildString(zipSpan, tokens);
+        }
+
         CSVAddressData csvAddressData = findAddressDataByZip(zip);
         if (csvAddressData != null) {
             city = csvAddressData.getCity();

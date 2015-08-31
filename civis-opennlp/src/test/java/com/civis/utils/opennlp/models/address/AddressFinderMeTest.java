@@ -1,14 +1,32 @@
+/*
+ * Copyright 2015 Sergej Meister
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.civis.utils.opennlp.models.address;
 
 import com.civis.utils.opennlp.models.BaseModelTest;
 import com.civis.utils.opennlp.models.ModelFactory;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 
 
 public class AddressFinderMeTest extends BaseModelTest {
 
+    @Test
     public void testPerlAmadeus() {
         String filePath = "text/perlAmadeus.txt";
         String exampleText = getTextExample(filePath);
@@ -24,6 +42,7 @@ public class AddressFinderMeTest extends BaseModelTest {
         Assert.assertTrue("Probability should be greater than 0.7 !", addressSpan.getProbability() > 0.8);
     }
 
+    @Test
     public void testQufox() {
         String filePath = "text/qufox.txt";
         String exampleText = getTextExample(filePath);
@@ -39,6 +58,7 @@ public class AddressFinderMeTest extends BaseModelTest {
         Assert.assertTrue("Probability should be greater than 0.7 !", addressSpan.getProbability() > 0.8);
     }
 
+    @Test
     public void testDibag() {
         String filePath = "text/dibag.txt";
         String exampleText = getTextExample(filePath);
@@ -51,6 +71,6 @@ public class AddressFinderMeTest extends BaseModelTest {
         Assert.assertEquals("80939", addressSpan.getZip());
         Assert.assertEquals("München", addressSpan.getCity());
         Assert.assertEquals("Deutschland", addressSpan.getCountry());
-        Assert.assertNull(addressSpan.getProbability());
+        Assert.assertTrue(addressSpan.getProbability() > 0.8);
     }
 }
