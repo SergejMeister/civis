@@ -190,8 +190,9 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
                 AddressSpan addressSpan =
                         new AddressSpanBuilder(fullAddressSpan, probability, tokens).setCountries(countries)
                                 .setCsvAddressData(csvAddressDataList).build();
-                //createAddressSpan(fullAddressSpan, probability, tokens);
-                addressSpans.add(addressSpan);
+                if (addressSpan.isValid()) {
+                    addressSpans.add(addressSpan);
+                }
             }
 
             return removeDuplicated(addressSpans);
@@ -220,7 +221,9 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
                             StringPattern stringPattern = StringPattern.recognize(tokens[streetIndex]);
                             if (stringPattern.isInitialCapitalLetter()) {
                                 addressSpan.setStreet(tokens[streetIndex]);
-                                return Collections.singletonList(addressSpan);
+                                if (addressSpan.isValid()) {
+                                    return Collections.singletonList(addressSpan);
+                                }
                             }
                         }
                     }

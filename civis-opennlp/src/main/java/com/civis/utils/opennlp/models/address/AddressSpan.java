@@ -17,6 +17,7 @@
 package com.civis.utils.opennlp.models.address;
 
 import com.civis.utils.opennlp.models.BaseSpan;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * This is a span to represents address data
@@ -72,6 +73,11 @@ public class AddressSpan extends BaseSpan {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public boolean isValid() {
+        return StringUtils.isNotBlank(getStreet()) && StringUtils.isNotBlank(getStreetNumber()) &&
+                StringUtils.isNotBlank(getZip()) && StringUtils.isNotBlank(getCity());
     }
 
     @Override
