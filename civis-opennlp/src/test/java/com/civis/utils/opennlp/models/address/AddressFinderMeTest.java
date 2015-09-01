@@ -71,6 +71,6 @@ public class AddressFinderMeTest extends BaseModelTest {
         Assert.assertEquals("80939", addressSpan.getZip());
         Assert.assertEquals("München", addressSpan.getCity());
         Assert.assertEquals("Deutschland", addressSpan.getCountry());
-        Assert.assertTrue(addressSpan.getProbability() > 0.8);
+        Assert.assertTrue(addressSpan.getProbability() > 0.7);
     }
 }
