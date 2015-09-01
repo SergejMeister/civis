@@ -16,6 +16,7 @@
 
 package com.civis.utils.opennlp.models.address;
 
+import com.civis.utils.html.parser.HtmlParser;
 import com.civis.utils.opennlp.models.BaseModelTest;
 import com.civis.utils.opennlp.models.ModelFactory;
 import org.junit.Assert;
@@ -72,5 +73,22 @@ public class AddressFinderMeTest extends BaseModelTest {
         Assert.assertEquals("München", addressSpan.getCity());
         Assert.assertEquals("Deutschland", addressSpan.getCountry());
         Assert.assertTrue(addressSpan.getProbability() > 0.7);
+    }
+
+    @Test
+    public void testCad() {
+        String filePath = "htmls/cad.html";
+        String exampleHtml = getTextExample(filePath);
+        String exampleText = new HtmlParser(exampleHtml).toPlainText().getContent();
+        AddressFinder addressFinder = ModelFactory.getAddressFinder();
+        List<AddressSpan> addressSpans = addressFinder.find(exampleText);
+        Assert.assertEquals("Exact on address should be found!", 1, addressSpans.size());
+        AddressSpan addressSpan = addressSpans.get(0);
+        Assert.assertEquals("Friedenstrasse", addressSpan.getStreet());
+        Assert.assertEquals("91a", addressSpan.getStreetNumber());
+        Assert.assertEquals("10249", addressSpan.getZip());
+        Assert.assertEquals("Berlin", addressSpan.getCity());
+        Assert.assertEquals("Deutschland", addressSpan.getCountry());
+        Assert.assertNull("Probability should ne null", addressSpan.getProbability());
     }
 }

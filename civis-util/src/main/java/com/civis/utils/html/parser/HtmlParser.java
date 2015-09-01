@@ -59,7 +59,6 @@ public class HtmlParser {
     private List<String> urls;
     private String mail;
 
-
     /**
      * Constructor to init html content.
      * <p/>
@@ -131,17 +130,19 @@ public class HtmlParser {
 
         }
 
-        content = stringBuilder.toString();
+        //replace all html entity unicode. like &aml etc.
+        content = Jsoup.parse(stringBuilder.toString()).text();
         return this;
     }
+
 
     private void parseUrl() {
         Set<String> result = new HashSet<>();
         Matcher m = WEB_URL_PATTERN.matcher(content);
         while (m.find()) {
             String urlValue = content.substring(m.start(0), m.end(0));
-            if(urlValue.endsWith(")")){
-                urlValue = urlValue.substring(0,urlValue.length() - 1);
+            if (urlValue.endsWith(")")) {
+                urlValue = urlValue.substring(0, urlValue.length() - 1);
             }
             if (useFilter) {
                 if (!htmlParseFilter.ignore(urlValue)) {

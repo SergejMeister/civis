@@ -200,6 +200,7 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
     }
 
     private List<AddressSpan> tryToFindAddressByZip(String[] tokens) {
+        tokens = removeAllSpecialChars(tokens);
         AddressSpan addressSpan = new AddressSpan();
         Set<String> zipSet = extractZips();
         String zip = findSetValueInToken(tokens, zipSet);
@@ -212,26 +213,59 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
             addressSpan.setCity(city);
             if (StringUtils.isNotBlank(city)) {
                 int zipIndex = tokenAt(tokens, zip);
-                for (int i = zipIndex; i > -1; i--) {
-                    // start on zip index and loop back
+                int streetNumberIndex = zipIndex - 1;
+                int maxLoopSize = 3;
+                int streetIndex = -1;
+                // try to find street number
+                for (int i = streetNumberIndex; i > -1; i--) {
+                    // start on zipIndex - 1 and loop back
                     if (StreetNumberFeature.STREET_NUMBER_PATTERN.matcher(tokens[i]).matches()) {
                         addressSpan.setStreetNumber(tokens[i]);
-                        int streetIndex = i - 1;
-                        if (streetIndex > -1) {
-                            StringPattern stringPattern = StringPattern.recognize(tokens[streetIndex]);
-                            if (stringPattern.isInitialCapitalLetter()) {
-                                addressSpan.setStreet(tokens[streetIndex]);
-                                if (addressSpan.isValid()) {
-                                    return Collections.singletonList(addressSpan);
-                                }
-                            }
+                        streetIndex = i - 1;
+                        break;
+                    }
+
+                    maxLoopSize--;
+                    //3 loops from zip index and street number is not found, than break
+                    if (maxLoopSize <= 0) {
+                        return Collections.emptyList();
+                    }
+                }
+
+                // try to find street
+                maxLoopSize = 3;
+                for (int i = streetIndex; i > -1; i--) {
+                    // start on streetIndex - 1 and loop back
+                    StringPattern stringPattern = StringPattern.recognize(tokens[streetIndex]);
+                    if (stringPattern.isInitialCapitalLetter()) {
+                        addressSpan.setStreet(tokens[streetIndex]);
+                        if (addressSpan.isValid()) {
+                            return Collections.singletonList(addressSpan);
                         }
+                    }
+
+                    maxLoopSize--;
+
+                    //3 loops from street number index and street is not found, than break
+                    if (maxLoopSize <= 0) {
+                        return Collections.emptyList();
                     }
                 }
             }
         }
 
         return Collections.emptyList();
+    }
+
+    private String[] removeAllSpecialChars(String[] tokens) {
+        List<String> clearTokens = new ArrayList<>();
+        for (String token : tokens) {
+            String clearToken = token.replaceAll("[+.^:,]", "");
+            if (StringUtils.isNotBlank(clearToken)) {
+                clearTokens.add(clearToken);
+            }
+        }
+        return clearTokens.toArray(new String[clearTokens.size()]);
     }
 
     private int tokenAt(String[] tokens, String value) {

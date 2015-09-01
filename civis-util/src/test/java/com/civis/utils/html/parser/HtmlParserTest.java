@@ -140,7 +140,7 @@ public class HtmlParserTest {
         String futuricerMailContent = getMailContent(FUTURICE_JOB_PATH);
         String plainText = new HtmlParser(futuricerMailContent).toPlainText().getContent();
         Assert.assertNotNull(plainText);
-        Assert.assertEquals(4321, plainText.length());
+        Assert.assertEquals(4190, plainText.length());
     }
 
     private String getMailContent(String fileName) {

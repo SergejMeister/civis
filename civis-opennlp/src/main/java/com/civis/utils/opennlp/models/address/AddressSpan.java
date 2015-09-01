@@ -77,7 +77,8 @@ public class AddressSpan extends BaseSpan {
 
     public boolean isValid() {
         return StringUtils.isNotBlank(getStreet()) && StringUtils.isNotBlank(getStreetNumber()) &&
-                StringUtils.isNotBlank(getZip()) && StringUtils.isNotBlank(getCity());
+                StringUtils.isNotBlank(getZip()) && StringUtils.isNotBlank(getCity()) &&
+                !getStreetNumber().equals(getZip());
     }
 
     @Override
