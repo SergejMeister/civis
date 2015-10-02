@@ -269,3 +269,50 @@ Arbeitsumfeld Attraktiver Arbeitgeber und attraktive Vergütung Teamplay meets g
 Erstellungsdatum der Ausschreibung 11. Mai 2015
 Kontakt Christiane Holländer, HOLLAENDER EDUCATION, Personalberatung, <START:address> Rathenower Str. 45, 10559 Berlin <END> , Tel. 030 20 62 1908, Mobil. 0175 176 50 51, ch@hollaender-education.de, www.hollaender-education.de. Firmenlogo, verlinkt auf __URL___
 Bitte beziehen Sie sich bei Ihrer Bewerbung auf StepStone
+Die Digitalisierung unserer Gesellschaft und der Trend zum intelligenten Gebäude, dem Smart Building, eröffnet uns ein weites internationales Betätigungsfeld, das wir gemeinsam mit Ihnen gestalten wollen.
+Für unseren Unternehmenshauptsitz Berlin im Bereich Forschung & Entwicklung suchen wir Sie als Abteilungsleiter (m/w) Systemtechnik Ihre Aufgaben:
+Umsetzen der Anforderungen des Produktmanagements in Systemkonzepte als technische Gesamtlösung zur Gebäudeautomation der ZukunftSystemkonzepte reviewenAufbauen, Weiterentwickeln und Führen eines Teams von SystemingenieurenStetiges
+Verbessern des EntwicklungsprozessesAuswählen und Führen externer DienstleisterAuswahl von Entwicklungswerkzeugen zur SystementwicklungZusammenarbeit mit Hochschulen und Fördereinrichtungen
+Ihr Profil: Hochschulabschluss in den Bereichen Informatik, Elektrotechnik oder vergleichbare Ausbildung (gerne promoviert)Langjährige Berufserfahrung, insbesondere in der Führung von Projekten in der Gebäudeautomation
+(Projekt- oder Teamleiter) und nachgewiesene Erfolge in der Führung von TeamsSehr gute Kenntnisse in der Gebäudeautomation und der allgemeinen RegelungstechnikKenntnisse im Umgang mit Simulationswerkzeugen (MATLAB, Simulink, Modelica etc.) Gutes Englisch in Wort und Schrift
+Wir bieten Ihnen: Ein attraktives Vergütungspaket und umfangreiche betriebliche SozialleistungenEine umfassende betriebliche Altersvorsorge mit ArbeitgeberzuschussEntwicklungsmöglichkeiten in einem international agierenden
+FamilienunternehmenFlexible Arbeitszeiten sowie ein breites Schulungs- und Weiterbildungsangebot Haben wir Ihr Interesse geweckt?
+Dann freuen wir uns auf Ihre Online-Bewerbung unter karriere.kieback-peter.de (Kennziffer 1558) Kieback&Peter GmbH & Co. KG Personalabteilung <START:address> Tempelhofer Weg 50 12347 Berlin <END> Ähnliche Stellenangebote
+Jobs in IT Web-Entwicklung InDeLa GmbH Berlin Nächste Vorherige Stellenanzeige 364 von 4162 Prestashop Implementierung, Administration und Entwicklung InDeLa ist ein junges Unternehmen und entwickelt IT-Lösungen für chemisch
+analytische Laboratorien. Dabei konzentrieren wir uns auf Fragestellungen, in denen spezifisches „know how“ auf die IT-Ebene abgebildet werden muss.
+Wir ergänzen Labordatenmanagementsysteme, entwickeln Software zum Tracking und zur Optimierung von Laborprozessen und unterstützen mit unseren Systemen die Interpretation von Analysendaten.
+Für den Aufbau eines chemisch-analytischen Dienstleistungsshop suchen wir zum frühestmöglichen Zeitpunkt einen PrestaShop-Administrator und –entwickler (w/m) Ihre Aufgaben Aufbau eines PrestaShops für chemisch-analytische
+Dienstleistungen Programmierung von Shop-Modulen in PHP Programmierung von WEB-Modulen in PHP und Java Administration der PrestaShop-Datenbank (MySQL) Wartung und Betreuung des Shops Unterweisung neuer Mitarbeiter in die Front End
+und Back End –Funktionen des Shops
+Ihr Profil Sie verfügen über eine IT-Berufsausbildung und/oder konnten idealerweise bereits Erfahrungen sammeln im Aufbau von Shop-Systemen und der Programmierung von WEB-Anwendungen Sie besitzen Kenntnisse in der PHP- und Java-
+Programmierung Sie besitzen Kenntnisse und Erfahrungen im Umgang mit MySQL-Datenbanken und können Trigger, Stored Procedures und komplexe Abfragen programmieren.
+Sie arbeiten gerne eigenverantwortlich und strukturiert Sie beherrschen die englische Sprache in Wort und Schrift Eine hohe Kunden- und Serviceorientierung runden Ihr Profil ab Was wir bieten ein innovatives und kreatives Arbeitsumfeld mit einer Vielzahl interessanter und interdisziplinärer Aufgaben eine Unternehmenskultur, die auch die Bedürfnisse der Mitarbeiter im Focus hat gute Chancen zur beruflichen und persönlichen Weiterentwicklung Interessiert?
+Richten Sie bitte Ihre Bewerbung an Dr. Jürgen Lipinski, InDeLa GmbH, <START:address> Rudower Chaussee 29, 12489 Berlin <END> oder gerne auch per Mail an jlipinski@indela.de. InDeLa GmbH, Rudower Chaussee 29, 12489 Berlin Firmenlogo, verlinkt auf __URL___ Bitte beziehen Sie sich bei Ihrer Bewerbung auf StepStone
+Werkstudent (m/w) im Bereich Finanzen Wir statten in Berlin Mehrfamilienhäuser mit unserem Türzugangssystem aus und suchen Dich ab sofort zur Unterstützung im Bereich Finanzen.
+DEINE AUFGABEN ... Du arbeitest direkt mit unserer Geschäftsführerin Finanzen zusammen und bist für die Rechnungslegung sowie Rechnungsprüfung zuständig.
+Zu Deinen weiteren Aufgaben gehört es, Budgetabweichungen festzustellen und zu begründen.
+Außerdem unterstützt Du beim Finanzcontrolling, bei Finanzabrechnungen für Förderanträge und führst Soll-Ist-Abgleiche durch.
+WAS DU MITBRINGST ... Du bist ein strukturiert denkender, gewissenhafter und kommunikativer Teamplayer, dem aber auch das selbständige Arbeiten liegt.
+Du hast Spaß am Umgang mit Zahlen und bist sicher im Umgang mit MS Excel.
+Idealerweise studierst Du BWL mit dem Schwerpunkt Controlling und/oder Finanzierung oder Ähnliches.
+Neben sehr guten Deutschkenntnissen verfügst Du über gute Englischkenntnisse.
+WAS DICH ERWARTET ... Du arbeitest mit einem jungen, internationalen Team im Herzen Berlins zusammen und kannst wertvolle Erfahrungen in einem schnell wachsenden Startup sammeln.
+Wir bieten Dir eine Anstellung als Werkstudent mit einem Arbeitspensum von 20 Stunden/Woche. INTERESSIERT? ...
+Wir freuen uns auf Deine aussagekräftige Bewerbung.
+Schicke einfach eine E-Mail an jobs@kiwi.ki. KIWI.KI GmbH Christoph Strato <START:address> Voltastraße 5, Haus 10.6 13355 Berlin <END> jobs@kiwi.ki http://www.kiwi.ki
+Bitte beziehen Sie sich bei Ihrer Bewerbung auf StepStone
+Was Sie mitbringen: abgeschlossenes Studium als Sozialarbeiter Sozialpädagoge (m/w) oder vergleichbarer Abschluss (staatliche Anerkennung erforderlich)
+Einschlägige Berufserfahrung Kenntnisse im Asylbereich Kenntnisse von min. einer Fremdsprache, weitere von Vorteil Einfühlungsvermögen,
+Teamfähigkeit und Einsatzbereitschaft aktuelles erweitertes Führungszeugnis
+Haben wir Ihr Interesse geweckt? Dann freuen wir uns auf Ihre vollständige Bewerbung unter Angabe Ihrer Gehaltsvorstellung und des frühestmöglichen Eintrittstermins.
+PeWoBe Professionelle Wohn- und Betreuungsgesellschaft mbH Georgia Stathorake <START:address> Dovestraße 10587 Berlin <END> Tel.: +493034506050 bewerbung@pewobe-berlin.de
+Your profile Very good understanding of Java development Aware of performance and scalability aspects in Java Knowledge and understanding of fundamental search engine concepts
+Very good knowledge of Lucene, Elasticsearch, Solr or Java-based search engines Familiarity with agile or lean development methodologies Knowledge of large dataset processing and
+NoSQL (Hadoop, Hive, Pig, Cassandra, Couchbase, MongoDB) Previous experience of computational linguistics will be an asset Knowledge of machine-learning techniques and/or recommendation
+systems will be considered as big plus Very good command of English required, other languages like German, French or Dutch are plus Jetzt bewerben
+Your contact StepStone Deutschland GmbH <START:address> Hammer Str. 19 40219 Düsseldorf <END> Medienhafen Virginia Pohlemann, Recruitment Manager Tel: 49 (0)211 93 93 5307 E-Mail: recruitment@stepstone.de
+Großraum Berlin Interesse? Dann senden Sie bitte Ihre aussagekräftigen Bewerbungsunterlagen unter Angabe Ihrer Gehaltsvorstellung und des frühestmöglichen Eintrittstermins per Mail an: foodservice@develey.de
+Develey Senf Feinkost GmbH Herrn Hans-Günter Borchers <START:address> Ottobrunner Str. 45 82008 Unterhaching <END> Key Account Manager Managerin Key-Account-Manager Key-Account-Managerin Key-Account-Management Account-Manager
+Wir bieten Die Möglichkeit für dich eine tragende Rolle in einem stark wachsenden Unternehmen zu spielen Eine steile Lernkurve mit vielen Herausforderungen Zusammenarbeit in einem talentierten,
+ehrgeizigen und motivierten team Eine transparente Unternehmenskultur mit kurzen Wegen und einer Can-Do Attitude Eintrittstermin: ab sofort Wenn wir dein Interesse geweckt haben,
+dann bewirb dich noch heute bei uns in dem du einfach deine aussagekräftigen Bewerbungsunterlagen an uns schickst. BOOK TIGER <START:address> Engeldamm 20 10179 Berlin <END> karriere@bookatiger.com
