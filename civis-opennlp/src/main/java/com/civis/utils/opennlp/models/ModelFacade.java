@@ -27,13 +27,13 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 
 /**
- * Created by Sergej Meister on 7/9/15.
+ * Facade to access NLP-Api.
  */
-public final class ModelFactory {
+public final class ModelFacade {
 
-    private final static Logger LOG = LoggerFactory.getLogger(ModelFactory.class);
+    private final static Logger LOG = LoggerFactory.getLogger(ModelFacade.class);
 
-    private ModelFactory() {
+    private ModelFacade() {
         // private constructor.
     }
 

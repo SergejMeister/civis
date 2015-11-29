@@ -18,7 +18,7 @@ package com.civis.utils.opennlp.models.address;
 
 import com.civis.utils.html.parser.HtmlParser;
 import com.civis.utils.opennlp.models.BaseModelTest;
-import com.civis.utils.opennlp.models.ModelFactory;
+import com.civis.utils.opennlp.models.ModelFacade;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class AddressFinderMeTest extends BaseModelTest {
     public void testPerlAmadeus() {
         String filePath = "text/perlAmadeus.txt";
         String exampleText = getTextExample(filePath);
-        AddressFinder addressFinder = ModelFactory.getAddressFinder();
+        AddressFinder addressFinder = ModelFacade.getAddressFinder();
         List<AddressSpan> addressSpans = addressFinder.find(exampleText);
         Assert.assertEquals("Exact on address should be found!", 1, addressSpans.size());
         AddressSpan addressSpan = addressSpans.get(0);
@@ -47,7 +47,7 @@ public class AddressFinderMeTest extends BaseModelTest {
     public void testQufox() {
         String filePath = "text/qufox.txt";
         String exampleText = getTextExample(filePath);
-        AddressFinder addressFinder = ModelFactory.getAddressFinder();
+        AddressFinder addressFinder = ModelFacade.getAddressFinder();
         List<AddressSpan> addressSpans = addressFinder.find(exampleText);
         Assert.assertEquals("Exact on address should be found!", 1, addressSpans.size());
         AddressSpan addressSpan = addressSpans.get(0);
@@ -63,7 +63,7 @@ public class AddressFinderMeTest extends BaseModelTest {
     public void testDibag() {
         String filePath = "text/dibag.txt";
         String exampleText = getTextExample(filePath);
-        AddressFinder addressFinder = ModelFactory.getAddressFinder();
+        AddressFinder addressFinder = ModelFacade.getAddressFinder();
         List<AddressSpan> addressSpans = addressFinder.find(exampleText);
         Assert.assertEquals("Exact on address should be found!", 1, addressSpans.size());
         AddressSpan addressSpan = addressSpans.get(0);
@@ -80,7 +80,7 @@ public class AddressFinderMeTest extends BaseModelTest {
         String filePath = "htmls/cad.html";
         String exampleHtml = getTextExample(filePath);
         String exampleText = new HtmlParser(exampleHtml).toPlainText().getContent();
-        AddressFinder addressFinder = ModelFactory.getAddressFinder();
+        AddressFinder addressFinder = ModelFacade.getAddressFinder();
         List<AddressSpan> addressSpans = addressFinder.find(exampleText);
         Assert.assertEquals("Exact on address should be found!", 1, addressSpans.size());
         AddressSpan addressSpan = addressSpans.get(0);

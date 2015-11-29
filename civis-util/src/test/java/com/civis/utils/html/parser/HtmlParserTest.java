@@ -35,9 +35,19 @@ public class HtmlParserTest {
 
     public static final String MONSTER_MAIL_PATH = "htmls/monsterjobs.html";
     public static final String STEPSTONE_MAIL_PATH = "htmls/stepstonejobs.html";
+    public static final String STEPSTONE_JOB_FACILITY = "htmls/stepStoneFacility.html";
     public static final String T_SYSTEM_JOB_PATH = "htmls/tsystem.html";
     public static final String FUTURICE_JOB_PATH = "htmls/futurice.html";
     public static final String HAPEKO_JOB_PATH = "htmls/hapeko.html";
+
+    @Test
+    public void testFindFirstFrame() {
+        String stepStoneMailContent = getMailContent(STEPSTONE_JOB_FACILITY);
+        String plainText = new HtmlParser(stepStoneMailContent).toPlainText().getContent();
+        Assert.assertTrue(plainText.contains("Ähnliche Stellenangebote"));
+        plainText = new HtmlParser(stepStoneMailContent).findFirstFrame().toPlainText().getContent();
+        Assert.assertFalse(plainText.contains("Ähnliche Stellenangebote"));
+    }
 
     @Test
     public void testFindAllHtmlLinksInMonsterMail() {
