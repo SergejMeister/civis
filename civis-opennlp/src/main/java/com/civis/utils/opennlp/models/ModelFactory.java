@@ -29,11 +29,11 @@ import java.io.InputStream;
 /**
  * Facade to access NLP-Api.
  */
-public final class ModelFacade {
+public final class ModelFactory {
 
-    private final static Logger LOG = LoggerFactory.getLogger(ModelFacade.class);
+    private final static Logger LOG = LoggerFactory.getLogger(ModelFactory.class);
 
-    private ModelFacade() {
+    private ModelFactory() {
         // private constructor.
     }
 

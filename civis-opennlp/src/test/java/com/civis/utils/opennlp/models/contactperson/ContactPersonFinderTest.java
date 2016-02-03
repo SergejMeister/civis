@@ -17,7 +17,7 @@
 package com.civis.utils.opennlp.models.contactperson;
 
 import com.civis.utils.opennlp.models.BaseModelTest;
-import com.civis.utils.opennlp.models.ModelFacade;
+import com.civis.utils.opennlp.models.ModelFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,7 +30,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
     public void testAdoJob() {
         String filePath = "text/adoJob.txt";
         String exampleText = getTextExample(filePath);
-        ContactPersonFinder contactPersonFinder = ModelFacade.getContactPersonFinder();
+        ContactPersonFinder contactPersonFinder = ModelFactory.getContactPersonFinder();
         List<ContactPersonSpan> contactPersonSpans = contactPersonFinder.find(exampleText);
         Assert.assertEquals("Should be exact one contact person!", 1, contactPersonSpans.size());
         ContactPersonSpan contactSpan = contactPersonSpans.get(0);
@@ -44,7 +44,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
     public void testMatecoJob() {
         String filePath = "text/mateco.txt";
         String exampleText = getTextExample(filePath);
-        ContactPersonFinder contactPersonFinder = ModelFacade.getContactPersonFinder();
+        ContactPersonFinder contactPersonFinder = ModelFactory.getContactPersonFinder();
         List<ContactPersonSpan> contactPersonSpans = contactPersonFinder.find(exampleText);
         Assert.assertEquals("Should be exact one contact person!", 1, contactPersonSpans.size());
         ContactPersonSpan contactSpan = contactPersonSpans.get(0);
@@ -58,7 +58,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
     public void testBernerMattnerJob() {
         String filePath = "text/bernerMattnerJob.txt";
         String exampleText = getTextExample(filePath);
-        ContactPersonFinder contactPersonFinder = ModelFacade.getContactPersonFinder();
+        ContactPersonFinder contactPersonFinder = ModelFactory.getContactPersonFinder();
         List<ContactPersonSpan> contactPersonSpans = contactPersonFinder.find(exampleText);
         Assert.assertEquals("Should be exact two contact person!", 2, contactPersonSpans.size());
 
@@ -79,7 +79,7 @@ public class ContactPersonFinderTest extends BaseModelTest {
     public void testIvuJob() {
         String filePath = "text/ivu.txt";
         String exampleText = getTextExample(filePath);
-        ContactPersonFinder contactPersonFinder = ModelFacade.getContactPersonFinder();
+        ContactPersonFinder contactPersonFinder = ModelFactory.getContactPersonFinder();
         List<ContactPersonSpan> contactPersonSpans = contactPersonFinder.find(exampleText);
         Assert.assertEquals("Should be exact one contact person!", 1, contactPersonSpans.size());
         ContactPersonSpan contactSpan = contactPersonSpans.get(0);
