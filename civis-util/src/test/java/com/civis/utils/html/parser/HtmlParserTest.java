@@ -121,6 +121,22 @@ public class HtmlParserTest {
         String monsterMailContent = getMailContent(T_SYSTEM_JOB_PATH);
         String monsterEmail = new HtmlParser(monsterMailContent).parse().getMail();
         Assert.assertEquals("jobs@t-systems-mms.com", monsterEmail);
+
+        String testContent = "hiermit moechte ich mien E-Mail job@test testen, das nicht gefudnden werden muss!";
+        String mail = new HtmlParser(testContent).parse().getMail();
+        Assert.assertNull(mail);
+
+        testContent = "hiermit moechte ich mien E-Mail job@test. testen, das nicht gefudnden werden muss!";
+        mail = new HtmlParser(testContent).parse().getMail();
+        Assert.assertNull(mail);
+
+        testContent = "hiermit moechte ich mien E-Mail job@test.de testen, das nicht gefudnden werden muss!";
+        mail = new HtmlParser(testContent).parse().getMail();
+        Assert.assertNotNull(mail);
+
+        testContent = "hiermit moechte ich mien E-Mail job@test.de.de testen, das nicht gefudnden werden muss!";
+        mail = new HtmlParser(testContent).parse().getMail();
+        Assert.assertNotNull(mail);
     }
 
     @Test
