@@ -23,12 +23,27 @@ public abstract class BaseSpan {
 
     protected Double probability;
 
+    private FindType findType ;
 
-    public BaseSpan () {
+
+    public BaseSpan() {
+        setFindType(FindType.NLP);
     }
 
-    public BaseSpan (Double probability) {
+    public BaseSpan(FindType findType) {
+        setFindType(findType);
+    }
+
+    public BaseSpan(Double probability) {
         setProbability(probability);
+    }
+
+    public FindType getFindType() {
+        return findType;
+    }
+
+    public void setFindType(FindType findType) {
+        this.findType = findType;
     }
 
     public Double getProbability() {
