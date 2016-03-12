@@ -107,6 +107,23 @@ public class HtmlParser {
     }
 
     /**
+     * Override the content with included iframe data.
+     * <p/>
+     * If a included iframe found, than override the content with included html.
+     * Otherwise
+     *
+     * @return the HtmlParser.
+     */
+    public HtmlParser findFirstFrame() {
+        Elements elements = Jsoup.parse(content).select("iframe");
+        if (elements != null && elements.size() > 0) {
+            Element element = elements.first();
+            content = element.html();
+        }
+        return this;
+    }
+
+    /**
      * Parse html as plain text.
      */
     public HtmlParser toPlainText() {

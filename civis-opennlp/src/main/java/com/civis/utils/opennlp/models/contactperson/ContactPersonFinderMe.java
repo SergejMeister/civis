@@ -22,6 +22,7 @@ import com.civis.utils.opennlp.features.ContactPersonFeatureGenerator;
 import com.civis.utils.opennlp.features.FirstCapitalLetterFeature;
 import com.civis.utils.opennlp.features.FirstNameFeatureGenerator;
 import com.civis.utils.opennlp.models.BaseModel;
+import com.civis.utils.opennlp.models.FindType;
 import com.civis.utils.opennlp.models.ModelPath;
 import com.civis.utils.opennlp.models.TrainConfigData;
 import com.civis.utils.opennlp.models.TrainModel;
@@ -340,7 +341,9 @@ public class ContactPersonFinderMe extends BaseModel<ContactPersonSpan> implemen
             String firstName = tokens[firstNameIndex];
             String secondName = tokens[firstNameIndex + 1];
             String sexPrefix = mapNamesGender.get(firstName);
-            contactSpans.add(new ContactPersonSpan(firstName, secondName, sexPrefix));
+            ContactPersonSpan contactPersonSpan = new ContactPersonSpan(firstName, secondName, sexPrefix);
+            contactPersonSpan.setFindType(FindType.PATTERN);
+            contactSpans.add(contactPersonSpan);
         }
 
         firstNameFeatureGenerator.clear();

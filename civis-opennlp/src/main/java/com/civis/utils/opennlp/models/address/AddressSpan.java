@@ -17,6 +17,7 @@
 package com.civis.utils.opennlp.models.address;
 
 import com.civis.utils.opennlp.models.BaseSpan;
+import com.civis.utils.opennlp.models.FindType;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -34,6 +35,12 @@ public class AddressSpan extends BaseSpan {
     private String zip;
     private String country;
 
+    public AddressSpan() {
+    }
+
+    public AddressSpan(FindType findType) {
+        super(findType);
+    }
 
     public String getStreet() {
         return street;

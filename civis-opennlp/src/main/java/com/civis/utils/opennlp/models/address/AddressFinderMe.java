@@ -24,6 +24,7 @@ import com.civis.utils.opennlp.features.FirstCapitalLetterFeature;
 import com.civis.utils.opennlp.features.NumberFeature;
 import com.civis.utils.opennlp.features.StreetNumberFeature;
 import com.civis.utils.opennlp.models.BaseModel;
+import com.civis.utils.opennlp.models.FindType;
 import com.civis.utils.opennlp.models.ModelPath;
 import com.civis.utils.opennlp.models.TrainConfigData;
 import com.civis.utils.opennlp.models.TrainModel;
@@ -201,7 +202,7 @@ public class AddressFinderMe extends BaseModel<AddressSpan> implements AddressFi
 
     private List<AddressSpan> tryToFindAddressByZip(String[] tokens) {
         tokens = removeAllSpecialChars(tokens);
-        AddressSpan addressSpan = new AddressSpan();
+        AddressSpan addressSpan = new AddressSpan(FindType.PATTERN);
         Set<String> zipSet = extractZips();
         String zip = findSetValueInToken(tokens, zipSet);
         addressSpan.setZip(zip);
