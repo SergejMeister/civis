@@ -89,8 +89,11 @@ public class HtmlParseFilter {
     }
 
     public Boolean ignore(String value) {
+        if (value == null) {
+            return Boolean.TRUE;
+        }
         for (String ignoreValue : ignoreList) {
-            if (ignoreValue.equals(value)) {
+            if (value.contains(ignoreValue)) {
                 return Boolean.TRUE;
             }
         }
